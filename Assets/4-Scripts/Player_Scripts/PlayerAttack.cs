@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class PlayerAttack : MonoBehaviour
     private float cooldownTimer = Mathf.Infinity;
     private List<IDamageable> iDamageables = new List<IDamageable>();
     private List<IDeflectable> iDeflectables = new List<IDeflectable>();
+    private int horizontalInput;
 
     private void Awake()
     {
@@ -22,7 +24,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButton(0) && cooldownTimer > attackCooldown && playerMovement.canAttack())
+        //if (Input.GetMouseButton(0) && cooldownTimer > attackCooldown && playerMovement.canAttack())
             Attack();
 
         cooldownTimer += Time.deltaTime;
@@ -90,4 +92,18 @@ public class PlayerAttack : MonoBehaviour
     //    iDeflectables.Clear();
     //}
 
+    public bool canAttack()
+    {
+        return horizontalInput == 0 && isGrounded() && !onWall();
+    }
+
+    private bool onWall()
+    {
+        throw new NotImplementedException();
+    }
+
+    private bool isGrounded()
+    {
+        throw new NotImplementedException();
+    }
 }

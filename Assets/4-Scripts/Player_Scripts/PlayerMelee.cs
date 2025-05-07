@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,7 +27,7 @@ public class PlayerMelee : MonoBehaviour
                 Collider2D[] enemiesToDamage = Physics2D.OverlapBoxAll(attackPos.position, new Vector2(attackRangeX, attackRangeY), 0) ;
                 for (int i = 0; i < enemiesToDamage.Length; i++) 
                     {
-                        enemiesToDamage[i].GetComponent<Enemy>().TakeDamage(damage);
+                    enemiesToDamage[i].GetComponent<LightEnemy>().TakeDamage(damage);
                     }
             }
 
@@ -37,5 +38,13 @@ public class PlayerMelee : MonoBehaviour
             timeBtwAttack -= Time.deltaTime;
         }
 
+    }
+
+    private class LightEnemy
+    {
+        internal void TakeDamage(int damage)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

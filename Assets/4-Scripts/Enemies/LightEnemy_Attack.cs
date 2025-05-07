@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Light_Enemy_Attack : MonoBehaviour
+public class LightEnemy_Attack : MonoBehaviour
 {
     [Header("Attack Parameters")]
     [SerializeField] private float attackCooldown;
@@ -17,11 +17,13 @@ public class Light_Enemy_Attack : MonoBehaviour
 
     //References
     private Animator anim;
-    private Health playerHealth;
+    private Player_Health playerHealth;
+    //private EnemyPatrol enemyPatrol;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
+    //    enemyPatrol = GetComponentInParent<EnemyPatrol>();
     }
 
     private void Update()
@@ -29,15 +31,17 @@ public class Light_Enemy_Attack : MonoBehaviour
         cooldownTimer += Time.deltaTime;
 
         //Attack only when player in sight?
-        //if (PlayerInSight())
+        if (PlayerInSight())
         {
-            //if (cooldownTimer >= attackCooldown)
+            if (cooldownTimer >= attackCooldown)
             {
-                //cooldownTimer = 0;
-                //anim.SetTrigger("meleeAttack");
+                cooldownTimer = 0;
+                anim.SetTrigger("Light_Attack");
             }
         }
 
+        //if (enemyPatrol != null)
+        //    enemyPatrol.enabled = !PlayerInSight();
     }
 
     private bool PlayerInSight()
@@ -48,16 +52,16 @@ public class Light_Enemy_Attack : MonoBehaviour
             0, Vector2.left, 0, playerLayer);
 
         if (hit.collider != null)
-            playerHealth = hit.transform.GetComponent<Health>();
+            playerHealth = hit.transform.GetComponent<Player_Health>();
 
         return hit.collider != null;
     }
-    //private void OnDrawGizmos()
-    //{
-    //    Gizmos.color = Color.red;
-    //    Gizmos.DrawWireCube(boxCollider.bounds.center + transform.right * range * transform.localScale.x * colliderDistance,
-    //        new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z));
-    //}
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(boxCollider.bounds.center + transform.right * range * transform.localScale.x * colliderDistance,
+            new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z));
+    }
 
     private void DamagePlayer()
     {
@@ -65,3 +69,5 @@ public class Light_Enemy_Attack : MonoBehaviour
             playerHealth.TakeDamage(damage);
     }
 }
+
+

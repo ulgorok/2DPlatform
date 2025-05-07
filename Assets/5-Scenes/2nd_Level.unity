@@ -193,12 +193,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 21838858}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &21838858
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -728,12 +728,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 107736594}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &107736594
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -904,12 +904,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 120073113}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &120073113
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1110,12 +1110,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 138705771}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &138705771
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1301,12 +1301,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 142546714}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &142546714
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1492,12 +1492,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 144103480}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &144103480
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1888,12 +1888,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 146969242}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &146969242
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2454,81 +2454,6 @@ Transform:
   - {fileID: 1599920960}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &178478130
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 178478131}
-  - component: {fileID: 178478133}
-  - component: {fileID: 178478132}
-  m_Layer: 5
-  m_Name: Healthbar Total
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &178478131
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 178478130}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1036756364}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -804.7361, y: 499.47217}
-  m_SizeDelta: {x: 307.0823, y: 64.569}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &178478132
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 178478130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.11372549}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4c8c9e60d3473134e81ed13a7a5aa8d3, type: 3}
-  m_Type: 3
-  m_PreserveAspect: 1
-  m_FillCenter: 1
-  m_FillMethod: 0
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &178478133
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 178478130}
-  m_CullTransparentMesh: 1
 --- !u!1 &178615425
 GameObject:
   m_ObjectHideFlags: 0
@@ -2600,12 +2525,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 178615429}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &178615429
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2791,12 +2716,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 195508581}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &195508581
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -3171,138 +3096,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 961673984}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &249525681
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 249525682}
-  - component: {fileID: 249525685}
-  - component: {fileID: 249525684}
-  - component: {fileID: 249525683}
-  m_Layer: 5
-  m_Name: Quit
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &249525682
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 249525681}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 954329051}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000038147, y: -199.4}
-  m_SizeDelta: {x: 266.2492, y: 84.687}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &249525683
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 249525681}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 249525684}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11500000, guid: 9ea110c3b10c2364baf649d48983263a, type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &249525684
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 249525681}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9348862a4ece8824880edcb5ffb39e88, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &249525685
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 249525681}
-  m_CullTransparentMesh: 1
 --- !u!1 &249778423
 GameObject:
   m_ObjectHideFlags: 0
@@ -3634,12 +3427,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 263024283}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &263024283
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -3825,12 +3618,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 265414430}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &265414430
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -4276,12 +4069,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 318627933}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &318627933
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -4651,12 +4444,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 333212142}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &333212142
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -4857,12 +4650,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 337110448}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &337110448
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -5048,12 +4841,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 339046696}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &339046696
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -5239,12 +5032,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 359228008}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &359228008
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -5694,138 +5487,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 393293590}
   m_CullTransparentMesh: 1
---- !u!1 &404036081
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 404036082}
-  - component: {fileID: 404036085}
-  - component: {fileID: 404036084}
-  - component: {fileID: 404036083}
-  m_Layer: 5
-  m_Name: Resume
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &404036082
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 404036081}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 954329051}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 23.8}
-  m_SizeDelta: {x: 266.2492, y: 84.687}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &404036083
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 404036081}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 404036084}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1591047400}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: PauseGame
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &404036084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 404036081}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1a0f429b4f8fadc45956155aceebd17f, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &404036085
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 404036081}
-  m_CullTransparentMesh: 1
 --- !u!1 &406462596
 GameObject:
   m_ObjectHideFlags: 0
@@ -5979,12 +5640,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 411523305}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &411523305
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -6471,12 +6132,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 445403527}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &445403527
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -6662,12 +6323,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 461621529}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &461621529
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -6983,12 +6644,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 473378323}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &473378323
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -7258,12 +6919,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 494213054}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &494213054
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -7640,7 +7301,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0.000000050322637, y: 0.000000018211095, z: 9.164304e-16, w: 1}
-  m_LocalPosition: {x: -6.8536305, y: -3.1047974, z: -10}
+  m_LocalPosition: {x: -8.649579, y: -3.0862873, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8201,12 +7862,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 575303192}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &575303192
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -8336,43 +7997,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 176818494}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &575601924
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 575601925}
-  m_Layer: 5
-  m_Name: pauseScreen
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &575601925
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 575601924}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1155030853}
-  - {fileID: 954329051}
-  m_Father: {fileID: 1591047404}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -1820, y: -980}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &585585493
 GameObject:
   m_ObjectHideFlags: 0
@@ -8444,12 +8068,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 585585497}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &585585497
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -8620,12 +8244,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 599323853}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &599323853
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -8826,12 +8450,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 614233201}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &614233201
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -9002,12 +8626,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 614822943}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &614822943
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -9488,12 +9112,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 639907451}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &639907451
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -9893,12 +9517,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 670350918}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &670350918
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -10604,12 +10228,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 762991756}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &762991756
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -10795,12 +10419,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 765494911}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &765494911
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -11191,12 +10815,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 789142961}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &789142961
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -11382,12 +11006,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 797957519}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &797957519
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -11666,12 +11290,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 811404514}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!95 &811404520
 Animator:
   serializedVersion: 5
@@ -11764,12 +11388,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 828440738}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &828440738
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -11955,12 +11579,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 838893795}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &838893795
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -12414,85 +12038,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &954329050
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 954329051}
-  - component: {fileID: 954329053}
-  - component: {fileID: 954329052}
-  m_Layer: 5
-  m_Name: Background_2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &954329051
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 954329050}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1306947883}
-  - {fileID: 404036082}
-  - {fileID: 1838295785}
-  - {fileID: 249525682}
-  m_Father: {fileID: 575601925}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000015259, y: -0.0000070333}
-  m_SizeDelta: {x: 799.4757, y: 651.8169}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &954329052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 954329050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.050980397, g: 0.054901965, b: 0.14509805, a: 0.6431373}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &954329053
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 954329050}
-  m_CullTransparentMesh: 1
 --- !u!1 &961673981
 GameObject:
   m_ObjectHideFlags: 0
@@ -12969,12 +12514,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 981845673}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &981845673
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -13290,12 +12835,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 986244906}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &986244906
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -13481,12 +13026,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 993497787}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &993497787
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -13601,74 +13146,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &997195529
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 997195530}
-  - component: {fileID: 997195532}
-  - component: {fileID: 997195531}
-  m_Layer: 0
-  m_Name: EventSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &997195530
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 997195529}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -960, y: -540, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1591047404}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &997195531
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 997195529}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
---- !u!114 &997195532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 997195529}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
 --- !u!1 &1008119840
 GameObject:
   m_ObjectHideFlags: 0
@@ -13872,12 +13349,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 1032825780}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &1032825780
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -14063,12 +13540,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 1033322616}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &1033322616
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -14183,59 +13660,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1036756363
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1036756364}
-  - component: {fileID: 1036756365}
-  m_Layer: 5
-  m_Name: Healthbar
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1036756364
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1036756363}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 178478131}
-  - {fileID: 1949441216}
-  m_Father: {fileID: 1591047404}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -1820, y: -980}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1036756365
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1036756363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efcb95c357381b64db6c96125b0b28e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterHealth: {fileID: 1511215245}
-  totalhealthBar: {fileID: 178478132}
-  currenthealthBar: {fileID: 1949441217}
 --- !u!1 &1057209823
 GameObject:
   m_ObjectHideFlags: 0
@@ -14307,12 +13731,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 1057209827}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &1057209827
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -14630,12 +14054,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 1075142674}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &1075142674
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -15418,12 +14842,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 1149346761}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &1149346761
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -15668,81 +15092,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 961673984}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1155030852
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1155030853}
-  - component: {fileID: 1155030855}
-  - component: {fileID: 1155030854}
-  m_Layer: 5
-  m_Name: Background_1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1155030853
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1155030852}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 575601925}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.5587, y: 0.7587}
-  m_SizeDelta: {x: 1925.704, y: 1075.2485}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1155030854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1155030852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.050980397, g: 0.054901965, b: 0.14509805, a: 0.6431373}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1155030855
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1155030852}
-  m_CullTransparentMesh: 1
 --- !u!1 &1155105481
 GameObject:
   m_ObjectHideFlags: 0
@@ -16206,12 +15555,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 1216622785}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &1216622785
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -16472,12 +15821,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 1234784124}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &1234784124
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -16663,12 +16012,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 1272464885}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &1272464885
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -16854,12 +16203,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 1279808901}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &1279808901
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -17053,81 +16402,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1286882459}
   m_CullTransparentMesh: 1
---- !u!1 &1306947882
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1306947883}
-  - component: {fileID: 1306947885}
-  - component: {fileID: 1306947884}
-  m_Layer: 5
-  m_Name: Paused_Ttitle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1306947883
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1306947882}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 954329051}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 174}
-  m_SizeDelta: {x: 583.158, y: 110.8401}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1306947884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1306947882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5b1abd8c5971e98489307ddec80c75c9, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1306947885
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1306947882}
-  m_CullTransparentMesh: 1
 --- !u!1 &1334730282
 GameObject:
   m_ObjectHideFlags: 0
@@ -17199,12 +16473,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 1334730286}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &1334730286
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -17390,12 +16664,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 1382466441}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &1382466441
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -17703,12 +16977,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 1453201397}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &1453201397
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -18061,12 +17335,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 1472314213}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &1472314213
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -18336,12 +17610,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 1493559247}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &1493559247
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -18527,12 +17801,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 1505368630}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &1505368630
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -18854,8 +18128,6 @@ MonoBehaviour:
   iFramesDuration: 0
   numberOfFlashes: 0
   components: []
-  deathSound: {fileID: 0}
-  hurtSound: {fileID: 0}
 --- !u!114 &1511215246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18868,6 +18140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fbc5a14e3f968649b7cf3ff8daaeaf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  checkpoint: {fileID: 0}
 --- !u!1 &1514597876
 GameObject:
   m_ObjectHideFlags: 0
@@ -19069,12 +18342,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 1539221997}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &1539221997
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -19328,12 +18601,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 1557141957}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &1557141957
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -19594,12 +18867,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 1579125104}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &1579125104
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -19844,124 +19117,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1591047399
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1591047404}
-  - component: {fileID: 1591047403}
-  - component: {fileID: 1591047402}
-  - component: {fileID: 1591047401}
-  - component: {fileID: 1591047400}
-  m_Layer: 5
-  m_Name: UICanvas (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1591047400
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1591047399}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ea110c3b10c2364baf649d48983263a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseScreen: {fileID: 575601924}
---- !u!114 &1591047401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1591047399}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
---- !u!114 &1591047402
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1591047399}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 1
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1920, y: 1080}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0.5
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
---- !u!223 &1591047403
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1591047399}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 25
-  m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_TargetDisplay: 0
---- !u!224 &1591047404
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1591047399}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 997195530}
-  - {fileID: 1036756364}
-  - {fileID: 575601925}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
 --- !u!1 &1599920959
 GameObject:
   m_ObjectHideFlags: 0
@@ -20033,12 +19188,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 1599920963}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &1599920963
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -20555,12 +19710,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 1654101830}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &1654101830
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -21204,12 +20359,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 1725547810}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &1725547810
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -22117,12 +21272,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 1797366828}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &1797366828
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -22308,12 +21463,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 1801087222}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &1801087222
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -22642,138 +21797,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1838295784
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1838295785}
-  - component: {fileID: 1838295788}
-  - component: {fileID: 1838295787}
-  - component: {fileID: 1838295786}
-  m_Layer: 5
-  m_Name: Options
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1838295785
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1838295784}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 954329051}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -83.163}
-  m_SizeDelta: {x: 266.2492, y: 84.687}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1838295786
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1838295784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1838295787}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11500000, guid: 9ea110c3b10c2364baf649d48983263a, type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1838295787
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1838295784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2f9d3b1d4561f8948927eb63b5cb1522, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1838295788
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1838295784}
-  m_CullTransparentMesh: 1
 --- !u!1 &1872401715
 GameObject:
   m_ObjectHideFlags: 0
@@ -22975,12 +21998,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 1873062129}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &1873062129
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -23151,12 +22174,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 1894503284}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &1894503284
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -23357,12 +22380,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 1919417427}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &1919417427
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -23607,81 +22630,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1949441215
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1949441216}
-  - component: {fileID: 1949441218}
-  - component: {fileID: 1949441217}
-  m_Layer: 5
-  m_Name: Healthbar Current
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1949441216
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1949441215}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1036756364}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -804.7361, y: 499.47217}
-  m_SizeDelta: {x: 307.0823, y: 64.569}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1949441217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1949441215}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4c8c9e60d3473134e81ed13a7a5aa8d3, type: 3}
-  m_Type: 3
-  m_PreserveAspect: 1
-  m_FillCenter: 1
-  m_FillMethod: 0
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1949441218
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1949441215}
-  m_CullTransparentMesh: 1
 --- !u!1 &1965719024
 GameObject:
   m_ObjectHideFlags: 0
@@ -24143,12 +23091,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 1997001948}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &1997001948
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -24854,12 +23802,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 2050507536}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &2050507536
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -25045,12 +23993,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 2070399030}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &2070399030
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -25351,12 +24299,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 2091441828}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &2091441828
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -25947,12 +24895,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 2111647295}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &2111647295
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -26138,12 +25086,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 2117885051}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &2117885051
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -26329,12 +25277,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   range: 0.52
-  colliderDistance: 0.84
   damage: 1
-  capsuleCollider: {fileID: 2137437991}
-  characterLayer:
+  colliderDistance: 0.84
+  boxCollider: {fileID: 0}
+  playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
 --- !u!70 &2137437991
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -26462,5 +25410,4 @@ SceneRoots:
   - {fileID: 961673984}
   - {fileID: 433745132}
   - {fileID: 1742168563}
-  - {fileID: 1591047404}
   - {fileID: 667374877}

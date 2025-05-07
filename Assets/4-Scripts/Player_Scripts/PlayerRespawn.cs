@@ -4,11 +4,11 @@ public class PlayerRespawn : MonoBehaviour
 {
     [SerializeField] private AudioClip checkpoint;
     private Transform currentCheckpoint;
-    private Health playerHealth;
+    private Player_Health playerHealth;
 
     private void Awake()
     {
-        playerHealth = GetComponent<Health>();
+        playerHealth = GetComponent<Player_Health>();
     }
 
     public void Respawn()
@@ -29,8 +29,4 @@ public class PlayerRespawn : MonoBehaviour
             collision.GetComponent<Animator>().SetTrigger("activate");
         }
     }
-}
-
-internal class CameraController
-{
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class LightEnemy_Health : MonoBehaviour
 {
     public int health;
     public float speed;
@@ -15,12 +15,12 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        anim.SetBool("isRunning", true);
+        anim.SetBool("Walk", true);
     }
 
     void Update()
     {
-        if(dazedTime <= 0)
+        if (dazedTime <= 0)
         {
             speed = 5;
         }
@@ -46,5 +46,3 @@ public class Enemy : MonoBehaviour
     }
 
 }
-    
-

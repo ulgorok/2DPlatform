@@ -1,8 +1,7 @@
 using UnityEngine;
 using System.Collections;
-using System;
 
-public class Health : MonoBehaviour //IDamageable //https://www.youtube.com/watch?v=Ci1KWAjfL1I 
+public class Player_Health : MonoBehaviour
 {
     [Header("Health")]
     [SerializeField] private float startingHealth;
@@ -19,6 +18,10 @@ public class Health : MonoBehaviour //IDamageable //https://www.youtube.com/watc
     [SerializeField] private Behaviour[] components;
     private bool invulnerable;
 
+    [Header("Death Sound")]
+    [SerializeField] private AudioClip deathSound;
+    [SerializeField] private AudioClip hurtSound;
+
     private void Awake()
     {
         currentHealth = startingHealth;
@@ -30,22 +33,25 @@ public class Health : MonoBehaviour //IDamageable //https://www.youtube.com/watc
         if (invulnerable) return;
         currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
 
-        if (currentHealth > 0)
+        //if (currentHealth > 0)
+        //{
+        //    anim.SetTrigger("hurt");
+        //    StartCoroutine(Invunerability());
+        //    //SoundManager.instance.PlaySound(hurtSound);
+        //}
+        //else
         {
-            anim.SetTrigger("hurt");
-            StartCoroutine(Invunerability());
-        }
-        else
-        {
-            if (!dead)
+            if (currentHealth <= 0 && !dead)
             {
-                anim.SetTrigger("die");
-
                 //Deactivate all attached component classes
                 foreach (Behaviour component in components)
                     component.enabled = false;
 
+                anim.SetBool("grounded", true);
+                anim.SetTrigger("Player_Death");
+
                 dead = true;
+                //SoundManager.instance.PlaySound(deathSound);
             }
         }
     }
@@ -67,9 +73,24 @@ public class Health : MonoBehaviour //IDamageable //https://www.youtube.com/watc
         Physics2D.IgnoreLayerCollision(10, 11, false);
         invulnerable = false;
     }
-
-    internal void Respawn()
+    private void Deactivate()
     {
-        throw new NotImplementedException();
+        gameObject.SetActive(false);
     }
+
+    //Respawn
+    public void Respawn()
+    {
+        AddHealth(startingHealth);
+        anim.ResetTrigger("Player_Death");
+        anim.Play("Player_Idle");
+        StartCoroutine(Invunerability());
+
+        //Activate all attached component classes
+        foreach (Behaviour component in components)
+            component.enabled = true;
+    }
+
+
+
 }
