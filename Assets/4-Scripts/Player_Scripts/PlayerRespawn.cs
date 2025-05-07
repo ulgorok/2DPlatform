@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class PlayerRespawn : MonoBehaviour
 {
-    [SerializeField] private AudioClip checkpoint;
-    private Transform currentCheckpoint;
+    //[SerializeField] private AudioClip checkpoint;
+    //private Transform currentCheckpoint;
     private Player_Health playerHealth;
 
     private void Awake()
@@ -14,7 +14,7 @@ public class PlayerRespawn : MonoBehaviour
     public void Respawn()
     {
         playerHealth.Respawn(); //Restore player health and reset animation
-        transform.position = currentCheckpoint.position; //Move player to checkpoint location
+        //transform.position = currentCheckpoint.position; //Move player to checkpoint location
 
         //Move the camera to the checkpoint's room
         //Camera.main.GetComponent<CameraController>().MoveToNewRoom(currentCheckpoint.parent);
@@ -23,10 +23,10 @@ public class PlayerRespawn : MonoBehaviour
     {
         if (collision.gameObject.tag == "Checkpoint")
         {
-            currentCheckpoint = collision.transform;
+            //currentCheckpoint = collision.transform;
             //SoundManager.instance.PlaySound(checkpoint);
-            collision.GetComponent<Collider2D>().enabled = false;
-            collision.GetComponent<Animator>().SetTrigger("activate");
+            collision.GetComponent<Collider2D>().enabled = false; //Deactivate checkpoint collider
+            collision.GetComponent<Animator>().SetTrigger("activate"); //Trigger checkpoint animation
         }
     }
 }
