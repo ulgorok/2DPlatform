@@ -8,6 +8,7 @@ public class Player_Health : MonoBehaviour
     public float currentHealth { get; private set; }
     private Animator anim;
     private bool dead;
+    private float DeathTimer;
 
     [Header("iFrames")]
     [SerializeField] private float iFramesDuration;
@@ -21,6 +22,23 @@ public class Player_Health : MonoBehaviour
     [Header("Death Sound")]
     [SerializeField] private AudioClip deathSound;
     [SerializeField] private AudioClip hurtSound;
+
+    private void Update()
+    {
+        if (DeathTimer > 0)
+        {
+            DeathTimer -= Time.deltaTime;
+            if (DeathTimer <= 0)
+            {
+                transform.position = new Vector3(-7.51f, 25.246f, -0.57f);
+                currentHealth = startingHealth;
+                dead = false;
+                anim.Play("Player_Respawn");
+                DeathTimer = 0;
+
+            }
+        }
+    }
 
     private void Awake()
     {
@@ -43,6 +61,7 @@ public class Player_Health : MonoBehaviour
         {
             if (currentHealth <= 0 && !dead)
             {
+                Respawn();
                 //Deactivate all attached component classes
                 foreach (Behaviour component in components)
                     component.enabled = false;
@@ -78,17 +97,22 @@ public class Player_Health : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+
+
     //Respawn
     public void Respawn()
     {
         AddHealth(startingHealth);
         anim.ResetTrigger("Player_Death");
-        anim.Play("Player_Idle");
         StartCoroutine(Invunerability());
 
         //Activate all attached component classes
         foreach (Behaviour component in components)
             component.enabled = true;
+
+        DeathTimer = 1.15f;
+
+
     }
 
 
