@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LightEnemy_Health : MonoBehaviour
 {
-    public int health;
+    public static int health;
     public float speed;
     private float dazedTime;
     private float colorTime;
@@ -16,6 +16,7 @@ public class LightEnemy_Health : MonoBehaviour
 
     void Start()
     {
+        _sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         anim.SetBool("Walk", true);
     }
@@ -51,7 +52,8 @@ public class LightEnemy_Health : MonoBehaviour
         }
         if (health <= 0)
         {
-            Destroy(gameObject);
+            anim.Play("Light_Death");
+            Destroy(gameObject, 1.5f);
         }
         transform.Translate(Vector2.left * speed * Time.deltaTime);
     }
@@ -60,7 +62,6 @@ public class LightEnemy_Health : MonoBehaviour
     {
         //dazedTime = startDazedTime;
         _sprite.color = Color.black;
-        Instantiate(bloodEffect, transform.position, Quaternion.identity);
         health -= damage;
         Debug.Log("damage TAKEN !");
         colorTime = 0.35f;

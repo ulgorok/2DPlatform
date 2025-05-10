@@ -15,11 +15,16 @@ public class PlayerAttack : MonoBehaviour
     private float cooldownTimer = 0f;
     public static bool canFire;
     public static int _bulletsLeft;
+    public int weaponChosen;
+    public bool canMelee;
+    public float canMeleeTimer;
     //public Transform _canvas;
     //public Transform _slider;
 
     private void Awake()
     {
+        canMelee = true;
+        weaponChosen = 0;
         _bulletsLeft = 5;
         canFire = true;
         //_canvas = this.gameObject.transform.Find("ReloadCanvas");
@@ -40,17 +45,44 @@ public class PlayerAttack : MonoBehaviour
                 cooldownTimer = 0;
             }
         }
+        if (canMeleeTimer > 0)
+        {
+            canMeleeTimer -= Time.deltaTime;
+            if (canMeleeTimer <= 0)
+            {
+                canMelee = true;
+                canMeleeTimer = 0;
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            if(weaponChosen == 0)
+            {
+                weaponChosen = 1;
+            }
+            else if(weaponChosen == 1)
+            {
+                weaponChosen = 0;
+            }
+        }
         if (Input.GetKeyDown(KeyCode.Mouse0)) 
         {
-            Attack();
+            if (weaponChosen == 0)
+            {
+                RangedAttack();
+            }
+            if (weaponChosen == 1)
+            {
+                MeleeAttack();
+            }
         }
     }
-    private void Attack()
+    private void RangedAttack()
     {
         if (canFire)
         {
             _bulletsLeft -= 1;
-            anim.SetTrigger("attack");
+            anim.SetTrigger("Player_Attack");
             Instantiate(bullet, new Vector3(firePoint.position.x, firePoint.position.y, firePoint.position.z), Quaternion.identity);
             cooldownTimer = 0.7f;
             canFire = false;
@@ -58,6 +90,15 @@ public class PlayerAttack : MonoBehaviour
         //bullets[0].transform.position = firePoint.position;
         //bullets[0].GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));
 
+    }
+    private void MeleeAttack()
+    {
+        if(canMelee)
+        {
+            anim.SetTrigger("Player_Melee_Attack");
+            canMeleeTimer = 0.83f;
+            canMelee = false;
+        }
     }
 
 

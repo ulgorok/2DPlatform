@@ -21,26 +21,29 @@ public class AIChase : MonoBehaviour
     //Update is called once per frame
     void Update()
     {
-        distance = Vector2.Distance(transform.position, player.transform.position);
-        Vector2 direction = player.transform.position - transform.position;
-        direction.Normalize();
+        if(LightEnemy_Health.health > 0)
+        {
+            distance = Vector2.Distance(transform.position, player.transform.position);
+            Vector2 direction = player.transform.position - transform.position;
+            direction.Normalize();
 
-        if(distance < 5 )
-        {
-            anim.SetBool("Light_Walk", true);
-            transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
-        }
-        else
-        {
-            anim.SetBool("Light_Walk", false);
-        }
-        if(direction.x > 0)
-        {
-            transform.localScale = new Vector3(1f, 1f, 1f);
-        }
-        if(direction.x < 0)
-        {
-            transform.localScale = new Vector3(-1f, 1f, 1f);
+            if (distance < 5)
+            {
+                anim.SetBool("Light_Walk", true);
+                transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
+            }
+            else
+            {
+                anim.SetBool("Light_Walk", false);
+            }
+            if (direction.x > 0)
+            {
+                transform.localScale = new Vector3(1f, 1f, 1f);
+            }
+            if (direction.x < 0)
+            {
+                transform.localScale = new Vector3(-1f, 1f, 1f);
+            }
         }
     }
 

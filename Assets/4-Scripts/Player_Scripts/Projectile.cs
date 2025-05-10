@@ -24,6 +24,7 @@ public class Projectile : MonoBehaviour
         // anim = GetComponent<Animator>();
         _rig = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
+        Destroy(this.gameObject, 2);
     }
     public void Update()
     {

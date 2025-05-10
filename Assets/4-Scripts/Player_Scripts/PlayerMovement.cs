@@ -56,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (isGrounded)
             {
-                _animator.Play("Player_walk");
+                _animator.SetFloat("Walk", 1);
             }
             transform.localScale = new Vector3(-1f, 1f, 1f);
         }
@@ -64,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (isGrounded)
             {
-                _animator.Play("Player_walk");
+                _animator.SetFloat("Walk", 1);
             }
             transform.localScale = new Vector3(1f, 1f, 1f);
         }
