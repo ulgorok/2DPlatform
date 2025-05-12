@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool canDash = true;
     private float dashingPower = 2.5f;
-    private float dashingTime = 0.3f;
+    private float dashingTime = 1f;
     private float dashingCooldown = 1f;
 
     private void Awake()
