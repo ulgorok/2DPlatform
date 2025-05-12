@@ -55,7 +55,7 @@
                 {
                     "name": "",
                     "id": "152ca4f5-f2b7-48a6-a03b-da47c39f1713",
-                    "path": "<Keyboard>/space",
+                    "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -67,6 +67,17 @@
                     "name": "",
                     "id": "f9c6f566-2793-47fa-a385-cc13d1d6bacf",
                     "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bf525127-b18d-414e-b2b5-2a5e2bdd4d2f",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

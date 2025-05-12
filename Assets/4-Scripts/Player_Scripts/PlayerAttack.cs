@@ -10,13 +10,16 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] public float attackCooldown;
     [SerializeField] private Transform firePoint;
     [SerializeField] private GameObject bullet;
+    [SerializeField] private GameObject bigBullet;
     private Animator anim;
     private PlayerMovement playerMovement;
     private float cooldownTimer = 0f;
+    private float cooldownStompTimer = 0f;
     public static bool canFire;
     public static int _bulletsLeft;
     public int weaponChosen;
     public bool canMelee;
+    public bool canStomp;
     public float canMeleeTimer;
     //public Transform _canvas;
     //public Transform _slider;
@@ -24,6 +27,7 @@ public class PlayerAttack : MonoBehaviour
     private void Awake()
     {
         canMelee = true;
+        canStomp = true;
         weaponChosen = 0;
         _bulletsLeft = 5;
         canFire = true;
@@ -45,6 +49,15 @@ public class PlayerAttack : MonoBehaviour
                 cooldownTimer = 0;
             }
         }
+        if (cooldownStompTimer > 0)
+        {
+            cooldownStompTimer -= Time.deltaTime;
+            if (cooldownStompTimer <= 0)
+            {
+                canStomp = true;
+                cooldownStompTimer = 0;
+            }
+        }
         if (canMeleeTimer > 0)
         {
             canMeleeTimer -= Time.deltaTime;
@@ -62,6 +75,14 @@ public class PlayerAttack : MonoBehaviour
             }
             else if(weaponChosen == 1)
             {
+                weaponChosen = 2;
+            }
+            else if(weaponChosen == 2)
+            {
+                weaponChosen = 3;
+            } 
+            else if(weaponChosen == 3)
+            {
                 weaponChosen = 0;
             }
         }
@@ -75,6 +96,18 @@ public class PlayerAttack : MonoBehaviour
             {
                 MeleeAttack();
             }
+            if (weaponChosen == 2)
+            {
+                Ranged2Attack();
+            }
+            if (weaponChosen == 3)
+            {
+                Melee2Attack();
+            }
+        }
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            Stomp();
         }
     }
     private void RangedAttack()
@@ -91,6 +124,20 @@ public class PlayerAttack : MonoBehaviour
         //bullets[0].GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));
 
     }
+    private void Ranged2Attack()
+    {
+        if (canFire)
+        {
+            _bulletsLeft -= 1;
+            anim.SetTrigger("Player_Attack");
+            Instantiate(bigBullet, new Vector3(firePoint.position.x, firePoint.position.y, firePoint.position.z), Quaternion.identity);
+            cooldownTimer = 1f;
+            canFire = false;
+        }
+        //bullets[0].transform.position = firePoint.position;
+        //bullets[0].GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));
+
+    }
     private void MeleeAttack()
     {
         if(canMelee)
@@ -100,6 +147,26 @@ public class PlayerAttack : MonoBehaviour
             canMelee = false;
         }
     }
-
-
+    private void Melee2Attack()
+    {
+        if(canMelee)
+        {
+            anim.SetTrigger("Player_Melee_Attack_2");
+            canMeleeTimer = 0.83f;
+            canMelee = false;
+        }
+    }
+    private void Stomp()
+    {
+        if (canStomp && PlayerMovement.isGrounded)
+        {
+            anim.SetTrigger("Player_Stomp");
+            cooldownStompTimer = 8f;
+            canStomp = false;
+        }
+        else
+        {
+            Debug.Log(cooldownStompTimer);
+        }
+    }
 }

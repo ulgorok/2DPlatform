@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public InputActionAsset _asset;
     private Animator _animator;
     private Rigidbody2D _rigidbody;
-    bool isGrounded = false; // Karakter başlangıçta yerde
+    public static bool isGrounded = false; // Karakter başlangıçta yerde
 
     private bool canDash = true;
     private float dashingPower = 2.5f;
@@ -45,7 +45,6 @@ public class PlayerMovement : MonoBehaviour
     {
         _rigidbody.position += new Vector2(_axisx * speed * Time.deltaTime, 0f);
         //UpdateMovement();
-        UpdateJump();
         ClampVelocity();
 
         _animator.SetFloat("Walk", Mathf.Abs(_axisx));
@@ -110,13 +109,13 @@ public class PlayerMovement : MonoBehaviour
     //    _rigidbody.AddForce(movement * speed);
     //}
 
-    private void UpdateJump()
-    {
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
-        {
-            _rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-        }
-    }
+    //private void UpdateJump()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+    //    {
+    //        _rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+    //    }
+    //}
     private void ClampVelocity()
     {
         Vector2 velocity = _rigidbody.velocity;

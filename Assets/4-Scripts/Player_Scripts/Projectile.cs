@@ -24,7 +24,14 @@ public class Projectile : MonoBehaviour
         // anim = GetComponent<Animator>();
         _rig = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
-        Destroy(this.gameObject, 2);
+        if(this.gameObject.name == "Bullet")
+        {
+            Destroy(this.gameObject, 2);
+        }
+        else
+        {
+            Destroy(this.gameObject, 0.1f);
+        }
     }
     public void Update()
     {
@@ -38,7 +45,13 @@ public class Projectile : MonoBehaviour
         }
         _rig.velocity = new Vector2(normDir * speed, 0f);
     }
-
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }
 //    private void Update()
 //    {

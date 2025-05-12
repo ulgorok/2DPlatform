@@ -12022,6 +12022,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LightEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8936637200050676606, guid: ba986de8400943a47acb86f0ece9bee2, type: 3}
+      propertyPath: stompForcex
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12035,6 +12039,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1039094632188884779, guid: 5ceb7c1ef0e6c264386eddee9cd09d35, type: 3}
+      propertyPath: jumpForce
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3972524066515321068, guid: 5ceb7c1ef0e6c264386eddee9cd09d35, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.51
@@ -12078,6 +12086,14 @@ PrefabInstance:
     - target: {fileID: 4291024615246904924, guid: 5ceb7c1ef0e6c264386eddee9cd09d35, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428263650965501119, guid: 5ceb7c1ef0e6c264386eddee9cd09d35, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428263650965501119, guid: 5ceb7c1ef0e6c264386eddee9cd09d35, type: 3}
+      propertyPath: m_UsedByEffector
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

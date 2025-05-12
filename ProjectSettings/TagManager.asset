@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - Character
   - PlayerAttack
+  - StrongPlayerAttack
+  - Stomp
   layers:
   - Default
   - TransparentFX

@@ -219,8 +219,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3c7873b5a3fd3f47a388c7effc1a54d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
   speed: 0
   startDazedTime: 0
   _sprite: {fileID: 0}
+  _rigidbody: {fileID: 0}
+  _player: {fileID: 0}
+  stompForcex: 5
+  stompForcey: 3
   bloodEffect: {fileID: 0}
