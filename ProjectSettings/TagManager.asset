@@ -10,6 +10,9 @@ TagManager:
   - PlayerAttack
   - StrongPlayerAttack
   - Stomp
+  - EnemyAttack
+  - Chest
+  - ShieldHealth
   layers:
   - Default
   - TransparentFX

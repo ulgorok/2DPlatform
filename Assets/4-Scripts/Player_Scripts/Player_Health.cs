@@ -6,9 +6,11 @@ public class Player_Health : MonoBehaviour
     [Header("Health")]
     [SerializeField] private float startingHealth;
     public float currentHealth { get; private set; }
+    public float currentShieldHealth { get; private set; }
     private Animator anim;
     private bool dead;
     private float DeathTimer;
+    public GameObject ShieldHealthShow;
 
     [Header("iFrames")]
     [SerializeField] private float iFramesDuration;
@@ -42,9 +44,35 @@ public class Player_Health : MonoBehaviour
 
     private void Awake()
     {
+        currentShieldHealth = 0;
         currentHealth = startingHealth;
         anim = GetComponent<Animator>();
         spriteRend = GetComponent<SpriteRenderer>();
+    }
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("EnemyAttack") && currentShieldHealth == 0)
+        {
+            TakeDamage(1);
+        }
+        else if (collision.gameObject.CompareTag("EnemyAttack") && currentShieldHealth > 0)
+        {
+            TakeShieldDamage(1);
+        }
+    }
+    public void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("ShieldHealth"))
+        {
+            currentShieldHealth++;
+            ShieldHealthShow.SetActive(true);
+            Destroy(other.gameObject);
+        }
+    }
+    public void TakeShieldDamage(float _damage)
+    {
+        if (invulnerable) return;
+        currentShieldHealth = Mathf.Clamp(currentShieldHealth - _damage, 0, 3);
     }
     public void TakeDamage(float _damage)
     {
@@ -77,6 +105,10 @@ public class Player_Health : MonoBehaviour
     public void AddHealth(float _value)
     {
         currentHealth = Mathf.Clamp(currentHealth + _value, 0, startingHealth);
+    }
+    public void AddBlueHealth(float _value)
+    {
+        currentHealth = currentHealth + _value;
     }
     private IEnumerator Invunerability()
     {

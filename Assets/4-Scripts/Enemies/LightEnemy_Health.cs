@@ -15,6 +15,7 @@ public class LightEnemy_Health : MonoBehaviour
     public float stompForcex;
     public float stompForcey;
     float normdir;
+    public GameObject itemPrefab;
 
     private Animator anim;
     public GameObject bloodEffect;
@@ -40,6 +41,7 @@ public class LightEnemy_Health : MonoBehaviour
         }
         else if(other.gameObject.CompareTag("Stomp"))
         {
+            GameObject droppedItem = Instantiate(itemPrefab, transform.position + Vector3.up * 0.10f, Quaternion.identity);
             TakeDamage(1);
             _rigidbody.AddForce(new Vector2(-normdir * stompForcex, stompForcey), ForceMode2D.Impulse);
             _rigidbody.velocity = new Vector2(Mathf.Clamp(_rigidbody.velocity.x, -5, 5), _rigidbody.velocity.y);

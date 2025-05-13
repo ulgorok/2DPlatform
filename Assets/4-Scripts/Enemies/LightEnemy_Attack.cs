@@ -28,6 +28,10 @@ public class LightEnemy_Attack : MonoBehaviour
 
     private void Update()
     {
+        if(Mathf.Abs(GameObject.Find("Player").transform.position.x - transform.position.x) < 0.25f)
+        {
+            anim.SetTrigger("Light_Attack");
+        }
         //cooldownTimer += Time.deltaTime;
 
         //Attack only when player in sight?
