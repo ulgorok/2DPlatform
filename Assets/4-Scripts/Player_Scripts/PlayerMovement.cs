@@ -18,8 +18,8 @@ public class PlayerMovement : MonoBehaviour
     public static bool isGrounded = false; // Karakter başlangıçta yerde
 
     private bool canDash = true;
-    private float dashingPower = 2.5f;
-    private float dashingTime = 1f;
+    private float dashingPower = 1f;
+    private float dashingTime = 0.75f;
     private float dashingCooldown = 1f;
 
     private void Awake()
@@ -31,14 +31,16 @@ public class PlayerMovement : MonoBehaviour
     private IEnumerator Dash()
     {
         canDash = false;
-        _animator.Play("Player_Dash");
+        _animator.SetBool("Dash", true);
         float originalGravity = _rigidbody.gravityScale;
         _rigidbody.gravityScale = 0f;
         _rigidbody.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
         yield return new WaitForSeconds(dashingTime);
         _rigidbody.gravityScale = originalGravity;
+        _animator.SetBool("Dash", false);
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
+
     }
 
     void Update()
