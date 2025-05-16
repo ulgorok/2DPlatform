@@ -1,10 +1,13 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class Player_Health : MonoBehaviour
 {
     [Header("Health")]
     [SerializeField] private float startingHealth;
+
+    public CameraShake cameraShake;
+
     public float currentHealth { get; private set; }
     public float currentShieldHealth { get; private set; }
     private Animator anim;
@@ -79,27 +82,19 @@ public class Player_Health : MonoBehaviour
         if (invulnerable) return;
         currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
 
-        //if (currentHealth > 0)
-        //{
-        //    anim.SetTrigger("hurt");
-        //    StartCoroutine(Invunerability());
-        //    //SoundManager.instance.PlaySound(hurtSound);
-        //}
-        //else
+        if (currentHealth <= 0 && !dead)
         {
-            if (currentHealth <= 0 && !dead)
-            {
-                Respawn();
-                //Deactivate all attached component classes
-                foreach (Behaviour component in components)
-                    component.enabled = false;
+            cameraShake.ShakerCamera(); // Kamera sarsıntısı burda tetikleniyor
 
-                anim.SetBool("grounded", true);
-                anim.SetTrigger("Player_Death");
+            Respawn();
+            // Deactivate all attached component classes
+            foreach (Behaviour component in components)
+                component.enabled = false;
 
-                dead = true;
-                //SoundManager.instance.PlaySound(deathSound);
-            }
+            anim.SetBool("grounded", true);
+            anim.SetTrigger("Player_Death");
+
+            dead = true;
         }
     }
     public void AddHealth(float _value)

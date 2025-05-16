@@ -15,9 +15,12 @@ public class LightEnemy_Health : MonoBehaviour
     public float stompForcey;
     float normdir;
     public GameObject itemPrefab;
+    private bool killedByStomp = false;
+
 
     private Animator anim;
     public GameObject bloodEffect;
+    private bool hasDroppedItem = false;
 
     void Awake()
     {
@@ -41,8 +44,9 @@ public class LightEnemy_Health : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Stomp"))
         {
-            GameObject droppedItem = Instantiate(itemPrefab, transform.position + Vector3.up * 0.10f, Quaternion.identity);
             TakeDamage(1);
+            killedByStomp = true;
+
             _rigidbody.AddForce(new Vector2(-normdir * stompForcex, stompForcey), ForceMode2D.Impulse);
             _rigidbody.velocity = new Vector2(Mathf.Clamp(_rigidbody.velocity.x, -5, 5), _rigidbody.velocity.y);
         }
@@ -63,11 +67,12 @@ public class LightEnemy_Health : MonoBehaviour
             }
         }
 
-        if (health <= 0)
+        if (health <= 0 && !hasDroppedItem)
         {
             anim.Play("Light_Death");
-            // Destroy(gameObject, 1.5f);  // Kaldırdık çünkü nesneyi tamamen yok etmek istemiyoruz
-            gameObject.SetActive(false);  // Pasif yapıyoruz, reset için sahnede kalacak
+            Instantiate(itemPrefab, transform.position + Vector3.up * 0.10f, Quaternion.identity);
+            hasDroppedItem = true;
+            gameObject.SetActive(false);
         }
 
         transform.Translate(Vector2.left * speed * Time.deltaTime);
@@ -75,20 +80,35 @@ public class LightEnemy_Health : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        if (health <= 0) return; // Zaten ölmüşse işlem yapma
+
         anim.SetTrigger("Light_Hurt");
         health -= damage;
         colorTime = 0.35f;
+
+        if (health <= 0)
+        {
+            anim.Play("Light_Death");
+
+            // Sadece stomp ile öldürüldüyse item düşsün
+            if (killedByStomp)
+            {
+                Instantiate(itemPrefab, transform.position + Vector3.up * 0.10f, Quaternion.identity);
+            }
+
+            gameObject.SetActive(false);
+        }
     }
 
     public void ResetStats()
     {
         health = 3;
         _sprite.color = Color.white;
-        anim.Rebind();         // Animasyonları resetler
-        anim.Update(0f);       // Animasyonun düzgün resetlenmesi için
+        anim.Rebind();
+        anim.Update(0f);
         anim.SetBool("Walk", true);
         _rigidbody.velocity = Vector2.zero;
+        killedByStomp = false; // Reset sırasında temizle
         gameObject.SetActive(true);
     }
 }
-

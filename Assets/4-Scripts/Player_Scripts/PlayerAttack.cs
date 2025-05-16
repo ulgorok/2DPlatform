@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -23,6 +23,7 @@ public class PlayerAttack : MonoBehaviour
     public float canMeleeTimer;
     //public Transform _canvas;
     //public Transform _slider;
+    public CameraShake cameraShake;
 
     private void Awake()
     {
@@ -163,6 +164,16 @@ public class PlayerAttack : MonoBehaviour
             anim.SetTrigger("Player_Stomp");
             cooldownStompTimer = 8f;
             canStomp = false;
+
+            // Kamera sarsıntısını tetikle
+            if (cameraShake != null)
+            {
+                cameraShake.ShakerCamera();
+            }
+            else
+            {
+                Debug.LogWarning("CameraShake referansı eksik!");
+            }
         }
         else
         {

@@ -7,11 +7,13 @@ using Unity.VisualScripting;
 public class    CameraShake : MonoBehaviour
 {
     private CinemachineVirtualCamera CinemachineVirtualCamera;
-    private float ShakeIntensity = 3f;
-    private float ShakeTime = 0.5f;
+    private float ShakeIntensity = 1.5f;
+    private float ShakeTime = 0.2f;
 
     private float timer;
     private CinemachineBasicMultiChannelPerlin _cbmcp;
+
+
 
     void Awake()
     {
@@ -25,11 +27,12 @@ public class    CameraShake : MonoBehaviour
 
     public void ShakerCamera()
     {
-        CinemachineBasicMultiChannelPerlin _cbmcp = CinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+        Debug.Log("Camera shake triggered!");
+        var _cbmcp = CinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
         _cbmcp.m_AmplitudeGain = ShakeIntensity;
-
         timer = ShakeTime;
     }
+
 
     void StopShake()
     {

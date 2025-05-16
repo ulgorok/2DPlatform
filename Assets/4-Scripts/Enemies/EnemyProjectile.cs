@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -77,5 +78,10 @@ public class EnemyProjectile : MonoBehaviour, IDeflectable
 
         transform.right = -transform.right;
         rb.velocity = direction * ReturnSpeed;
+    }
+
+    internal void ActivateProjectile()
+    {
+        throw new NotImplementedException();
     }
 }
