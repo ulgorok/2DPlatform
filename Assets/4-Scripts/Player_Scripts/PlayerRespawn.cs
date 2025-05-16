@@ -1,9 +1,7 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerRespawn : MonoBehaviour
 {
-    //[SerializeField] private AudioClip checkpoint;
-    //private Transform currentCheckpoint;
     private Player_Health playerHealth;
 
     private void Awake()
@@ -11,22 +9,34 @@ public class PlayerRespawn : MonoBehaviour
         playerHealth = GetComponent<Player_Health>();
     }
 
+    void ResetAllEnemies()
+    {
+        void ResetAllEnemies()
+        {
+            EnemyRespawnHandler[] enemies = FindObjectsOfType<EnemyRespawnHandler>();
+            Debug.Log("Enemies found: " + enemies.Length);
+            foreach (var enemy in enemies)
+            {
+                Debug.Log("Resetting enemy: " + enemy.name);
+                enemy.ResetEnemy();
+            }
+        }
+
+    }
+
     public void Respawn()
     {
+        Debug.Log("Player Respawn called");
         playerHealth.Respawn(); //Restore player health and reset animation
-        //transform.position = currentCheckpoint.position; //Move player to checkpoint location
-
-        //Move the camera to the checkpoint's room
-        //Camera.main.GetComponent<CameraController>().MoveToNewRoom(currentCheckpoint.parent);
+        ResetAllEnemies();      // <-- EKLENDİ
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Checkpoint")
         {
-            //currentCheckpoint = collision.transform;
-            //SoundManager.instance.PlaySound(checkpoint);
-            collision.GetComponent<Collider2D>().enabled = false; //Deactivate checkpoint collider
-            collision.GetComponent<Animator>().SetTrigger("activate"); //Trigger checkpoint animation
+            collision.GetComponent<Collider2D>().enabled = false;
+            collision.GetComponent<Animator>().SetTrigger("activate");
         }
     }
 }

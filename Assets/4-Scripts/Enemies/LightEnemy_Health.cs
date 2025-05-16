@@ -1,14 +1,13 @@
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class LightEnemy_Health : MonoBehaviour
 {
-    public static int health;
+    public int health;
     public float speed;
-    private float dazedTime;
     private float colorTime;
-    public float startDazedTime;
     public SpriteRenderer _sprite;
     public Rigidbody2D _rigidbody;
     public GameObject _player;
@@ -20,7 +19,7 @@ public class LightEnemy_Health : MonoBehaviour
     private Animator anim;
     public GameObject bloodEffect;
 
-    void Start()
+    void Awake()
     {
         health = 3;
         _player = GameObject.Find("Player");
@@ -29,17 +28,18 @@ public class LightEnemy_Health : MonoBehaviour
         anim = GetComponent<Animator>();
         anim.SetBool("Walk", true);
     }
+
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag("PlayerAttack"))
+        if (other.gameObject.CompareTag("PlayerAttack"))
         {
             TakeDamage(1);
         }
-        else if(other.gameObject.CompareTag("StrongPlayerAttack"))
+        else if (other.gameObject.CompareTag("StrongPlayerAttack"))
         {
             TakeDamage(2);
         }
-        else if(other.gameObject.CompareTag("Stomp"))
+        else if (other.gameObject.CompareTag("Stomp"))
         {
             GameObject droppedItem = Instantiate(itemPrefab, transform.position + Vector3.up * 0.10f, Quaternion.identity);
             TakeDamage(1);
@@ -47,50 +47,48 @@ public class LightEnemy_Health : MonoBehaviour
             _rigidbody.velocity = new Vector2(Mathf.Clamp(_rigidbody.velocity.x, -5, 5), _rigidbody.velocity.y);
         }
     }
+
     void Update()
     {
         float direction = _player.transform.position.x - transform.position.x;
-        if (direction < 0)
-        {
-            normdir = -1;
-        }
-        else if (direction > 0)
-        {
-            normdir = 1;
-        }
-        //if (dazedTime <= 0)
-        //{
-        //    speed = 5;
-        //}
-        //else
-        //{
-        //    speed = 0;
-        //    dazedTime -= Time.deltaTime;
-        //}
-        if (colorTime > 0) 
+        normdir = direction < 0 ? -1 : 1;
+
+        if (colorTime > 0)
         {
             colorTime -= Time.deltaTime;
-            if(colorTime <= 0 )
+            if (colorTime <= 0)
             {
                 _sprite.color = Color.white;
                 colorTime = 0;
             }
         }
+
         if (health <= 0)
         {
             anim.Play("Light_Death");
-            Destroy(gameObject, 1.5f);
+            // Destroy(gameObject, 1.5f);  // Kaldırdık çünkü nesneyi tamamen yok etmek istemiyoruz
+            gameObject.SetActive(false);  // Pasif yapıyoruz, reset için sahnede kalacak
         }
+
         transform.Translate(Vector2.left * speed * Time.deltaTime);
     }
 
     public void TakeDamage(int damage)
     {
-        //dazedTime = startDazedTime;
-        _sprite.color = Color.black;
+        anim.SetTrigger("Light_Hurt");
         health -= damage;
-        Debug.Log("damage TAKEN !");
         colorTime = 0.35f;
     }
 
+    public void ResetStats()
+    {
+        health = 3;
+        _sprite.color = Color.white;
+        anim.Rebind();         // Animasyonları resetler
+        anim.Update(0f);       // Animasyonun düzgün resetlenmesi için
+        anim.SetBool("Walk", true);
+        _rigidbody.velocity = Vector2.zero;
+        gameObject.SetActive(true);
+    }
 }
+

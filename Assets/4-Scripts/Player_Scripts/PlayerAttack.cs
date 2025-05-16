@@ -129,7 +129,7 @@ public class PlayerAttack : MonoBehaviour
         if (canFire)
         {
             _bulletsLeft -= 1;
-            anim.SetTrigger("Player_Attack");
+            anim.SetTrigger("Player_Shotgun_Attack");
             Instantiate(bigBullet, new Vector3(firePoint.position.x, firePoint.position.y, firePoint.position.z), Quaternion.identity);
             cooldownTimer = 1f;
             canFire = false;

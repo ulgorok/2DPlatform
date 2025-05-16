@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//https://www.youtube.com/watch?v=2SXa10ILJms 
-
 public class AIChase : MonoBehaviour
 {
     public GameObject player;
@@ -11,17 +9,17 @@ public class AIChase : MonoBehaviour
 
     private float distance;
     public Animator anim;
-    // Start is called before the first frame update
+    private LightEnemy_Health healthScript;
 
     void Start()
     {
         anim = GetComponent<Animator>();
+        healthScript = GetComponent<LightEnemy_Health>();
     }
 
-    //Update is called once per frame
     void Update()
     {
-        if(LightEnemy_Health.health > 0)
+        if (healthScript.health > 0)
         {
             distance = Vector2.Distance(transform.position, player.transform.position);
             Vector2 direction = player.transform.position - transform.position;
@@ -36,6 +34,7 @@ public class AIChase : MonoBehaviour
             {
                 anim.SetBool("Light_Walk", false);
             }
+
             if (direction.x > 0)
             {
                 transform.localScale = new Vector3(1f, 1f, 1f);
@@ -46,5 +45,4 @@ public class AIChase : MonoBehaviour
             }
         }
     }
-
 }
