@@ -21,6 +21,8 @@ public class LightEnemy_Attack : MonoBehaviour
 
     private float cooldownTimer = 0f;
 
+    public bool attackInProgress;
+
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -43,9 +45,10 @@ public class LightEnemy_Attack : MonoBehaviour
     {
         cooldownTimer += Time.deltaTime;
 
-        if (PlayerInSight() && cooldownTimer >= attackCooldown)
+        if (PlayerInSight() && cooldownTimer >= attackCooldown && !attackInProgress)
         {
-            cooldownTimer = 0f;
+            attackInProgress = true;
+            cooldownTimer = 1f;
             anim.SetTrigger("Light_Attack");
         }
     }
@@ -63,10 +66,11 @@ public class LightEnemy_Attack : MonoBehaviour
         if (hit.collider != null)
         {
             playerHealth = hit.transform.GetComponent<Player_Health>();
-            return true;
+            return !playerHealth.dead;
         }
 
         playerHealth = null;
+        attackInProgress = false;
         return false;
     }
 
@@ -77,6 +81,13 @@ public class LightEnemy_Attack : MonoBehaviour
         {
             playerHealth.TakeDamage(damage);
         }
+
+        attackInProgress = false;
+    }
+
+    private void OnAttackExit()
+    {
+        attackInProgress = false;
     }
 
     private void OnDrawGizmosSelected()

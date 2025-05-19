@@ -15,7 +15,6 @@ public class LightEnemy_Health : MonoBehaviour
     public float stompForcey;
     float normdir;
     public GameObject itemPrefab;
-    private bool killedByStomp = false;
 
 
     private Animator anim;
@@ -44,8 +43,7 @@ public class LightEnemy_Health : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Stomp"))
         {
-            TakeDamage(1);
-            killedByStomp = true;
+            TakeDamage(1, true);
 
             _rigidbody.AddForce(new Vector2(-normdir * stompForcex, stompForcey), ForceMode2D.Impulse);
             _rigidbody.velocity = new Vector2(Mathf.Clamp(_rigidbody.velocity.x, -5, 5), _rigidbody.velocity.y);
@@ -67,18 +65,18 @@ public class LightEnemy_Health : MonoBehaviour
             }
         }
 
-        if (health <= 0 && !hasDroppedItem)
-        {
-            anim.Play("Light_Death");
-            Instantiate(itemPrefab, transform.position + Vector3.up * 0.10f, Quaternion.identity);
-            hasDroppedItem = true;
-            gameObject.SetActive(false);
-        }
+        //if (health <= 0 && !hasDroppedItem)
+        //{
+        //    anim.Play("Light_Death");
+        //    Instantiate(itemPrefab, transform.position + Vector3.up * 0.10f, Quaternion.identity);
+        //    hasDroppedItem = true;
+        //    gameObject.SetActive(false);
+        //}
 
         transform.Translate(Vector2.left * speed * Time.deltaTime);
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, bool damagedByStomp = false)
     {
         if (health <= 0) return; // Zaten ölmüşse işlem yapma
 
@@ -91,12 +89,12 @@ public class LightEnemy_Health : MonoBehaviour
             anim.Play("Light_Death");
 
             // Sadece stomp ile öldürüldüyse item düşsün
-            if (killedByStomp)
+            if (damagedByStomp)
             {
                 Instantiate(itemPrefab, transform.position + Vector3.up * 0.10f, Quaternion.identity);
             }
 
-            gameObject.SetActive(false);
+            PlayerRespawn.deadEnemies.Add(GetComponent<EnemyRespawnHandler>());
         }
     }
 
@@ -108,7 +106,11 @@ public class LightEnemy_Health : MonoBehaviour
         anim.Update(0f);
         anim.SetBool("Walk", true);
         _rigidbody.velocity = Vector2.zero;
-        killedByStomp = false; // Reset sırasında temizle
         gameObject.SetActive(true);
+    }
+
+    private void OnDeathAnimationFinished()
+    {
+        gameObject.SetActive(false);
     }
 }

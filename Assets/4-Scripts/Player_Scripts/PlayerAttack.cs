@@ -159,7 +159,7 @@ public class PlayerAttack : MonoBehaviour
     }
     private void Stomp()
     {
-        if (canStomp && PlayerMovement.isGrounded)
+        if (canStomp && playerMovement.isGrounded)
         {
             anim.SetTrigger("Player_Stomp");
             cooldownStompTimer = 8f;

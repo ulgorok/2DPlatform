@@ -11,7 +11,7 @@ public class Player_Health : MonoBehaviour
     public float currentHealth { get; private set; }
     public float currentShieldHealth { get; private set; }
     private Animator anim;
-    private bool dead;
+    public bool dead { get; private set; }
     private float DeathTimer;
     public GameObject ShieldHealthShow;
 
@@ -27,6 +27,18 @@ public class Player_Health : MonoBehaviour
     [Header("Death Sound")]
     [SerializeField] private AudioClip deathSound;
     [SerializeField] private AudioClip hurtSound;
+
+    private PlayerRespawn playerRespawn;
+
+
+    private void Awake()
+    {
+        currentShieldHealth = 0;
+        currentHealth = startingHealth;
+        anim = GetComponent<Animator>();
+        spriteRend = GetComponent<SpriteRenderer>();
+        playerRespawn = GetComponent<PlayerRespawn>();
+    }
 
     private void Update()
     {
@@ -45,20 +57,9 @@ public class Player_Health : MonoBehaviour
         }
     }
 
-    private void Awake()
-    {
-        currentShieldHealth = 0;
-        currentHealth = startingHealth;
-        anim = GetComponent<Animator>();
-        spriteRend = GetComponent<SpriteRenderer>();
-    }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("EnemyAttack") && currentShieldHealth == 0)
-        {
-            TakeDamage(1);
-        }
-        else if (collision.gameObject.CompareTag("EnemyAttack") && currentShieldHealth > 0)
+        if (collision.gameObject.CompareTag("EnemyAttack") && currentShieldHealth > 0)
         {
             TakeShieldDamage(1);
         }
@@ -79,12 +80,14 @@ public class Player_Health : MonoBehaviour
     }
     public void TakeDamage(float _damage)
     {
-        if (invulnerable) return;
+        if (invulnerable && dead) return;
+
         currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
 
         if (currentHealth <= 0 && !dead)
         {
             cameraShake.ShakerCamera(); // Kamera sarsıntısı burda tetikleniyor
+            DeathTimer = 1.15f;
 
             Respawn();
             // Deactivate all attached component classes
@@ -137,9 +140,7 @@ public class Player_Health : MonoBehaviour
         foreach (Behaviour component in components)
             component.enabled = true;
 
-        DeathTimer = 1.15f;
-
-
+        playerRespawn.Respawn();
     }
 
 

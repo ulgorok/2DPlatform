@@ -1,25 +1,26 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class PlayerRespawn : MonoBehaviour
 {
     private Player_Health playerHealth;
 
+    public static List<EnemyRespawnHandler> deadEnemies;
+
     private void Awake()
     {
         playerHealth = GetComponent<Player_Health>();
+        deadEnemies = new();
     }
 
     void ResetAllEnemies()
     {
-        void ResetAllEnemies()
+        //EnemyRespawnHandler[] enemies = FindObjectsOfType<EnemyRespawnHandler>();
+        //Debug.Log("Enemies found: " + enemies.Length);
+        foreach (var enemy in deadEnemies)
         {
-            EnemyRespawnHandler[] enemies = FindObjectsOfType<EnemyRespawnHandler>();
-            Debug.Log("Enemies found: " + enemies.Length);
-            foreach (var enemy in enemies)
-            {
-                Debug.Log("Resetting enemy: " + enemy.name);
-                enemy.ResetEnemy();
-            }
+            Debug.Log("Resetting enemy: " + enemy.name);
+            enemy.ResetEnemy();
         }
 
     }
@@ -27,7 +28,6 @@ public class PlayerRespawn : MonoBehaviour
     public void Respawn()
     {
         Debug.Log("Player Respawn called");
-        playerHealth.Respawn(); //Restore player health and reset animation
         ResetAllEnemies();      // <-- EKLENDİ
     }
 

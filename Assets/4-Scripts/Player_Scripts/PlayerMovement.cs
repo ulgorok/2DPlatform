@@ -15,17 +15,22 @@ public class PlayerMovement : MonoBehaviour
     public InputActionAsset _asset;
     private Animator _animator;
     private Rigidbody2D _rigidbody;
-    public static bool isGrounded = false; // Karakter başlangıçta yerde
+
+    public bool isGrounded = false; // Karakter başlangıçta yerde
 
     private bool canDash = true;
     private float dashingPower = 1f;
     private float dashingTime = 0.75f;
     private float dashingCooldown = 1f;
 
+    public Transform groundCheckTransform;
+    private Player_Health playerHealth;
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        playerHealth = GetComponent<Player_Health>();
     }
 
     private IEnumerator Dash()
@@ -45,9 +50,13 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (playerHealth.dead) return;
+
+
         _rigidbody.position += new Vector2(_axisx * speed * Time.deltaTime, 0f);
         //UpdateMovement();
         ClampVelocity();
+        CheckGround();
 
         _animator.SetFloat("Walk", Mathf.Abs(_axisx));
         _animator.SetBool("isJumping", _rigidbody.velocity.y != 0);
@@ -160,30 +169,55 @@ public class PlayerMovement : MonoBehaviour
 
     public void HandleJump(InputAction.CallbackContext ctx)
     {
-        if (isGrounded)
+        if (isGrounded && !playerHealth.dead)
         {
             _rigidbody.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void CheckGround()
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        RaycastHit2D hit = Physics2D.Raycast(groundCheckTransform.position, Vector2.down, 0.1f, LayerMask.GetMask("Ground"));
+
+        if (hit.collider != null)
         {
-            isGrounded = true;
-            _animator.SetBool("Grounded", true);
+            if (hit.collider.gameObject.CompareTag("Ground"))
+            {
+                isGrounded = true;
+                _animator.SetBool("Grounded", true);
+            }
+
+            //else
+            //{
+            //    isGrounded = false;
+            //    _animator.SetBool("Grounded", false);
+            //}
         }
-        // Yere temas kontrolü (örneğin, bir Collider ile)
-    }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
+        else
         {
             isGrounded = false;
             _animator.SetBool("Grounded", false);
         }
-
     }
+
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Ground"))
+    //    {
+    //        isGrounded = true;
+    //        _animator.SetBool("Grounded", true);
+    //    }
+    //    // Yere temas kontrolü (örneğin, bir Collider ile)
+    //}
+    //private void OnCollisionExit2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Ground"))
+    //    {
+    //        isGrounded = false;
+    //        _animator.SetBool("Grounded", false);
+    //    }
+
+    //}
 
 }
 
