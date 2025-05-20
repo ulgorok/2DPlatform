@@ -11,19 +11,40 @@ public class Chest : MonoBehaviour
     public SpriteRenderer _spriteRenderer;
     public Sprite openedSprite;
     public CameraShake cameraShake;
+    public static List<Chest> allChests = new();
 
-    public void Start()
+
+    //public void Start()
+    //{
+    //    _spriteRenderer = GetComponent<SpriteRenderer>();
+
+    //    // Kamera shake component'ini otomatik bul (sahnedeki)
+    //    if (cameraShake == null)
+    //    {
+    //        cameraShake = FindObjectOfType<CameraShake>();
+    //        if (cameraShake == null)
+    //            Debug.LogWarning("CameraShake bulunamadı! Sahnede CameraShake component'li bir obje olmalı.");
+    //    }
+    //}
+    private Sprite defaultSprite;
+
+    void Start()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
 
-        // Kamera shake component'ini otomatik bul (sahnedeki)
-        if (cameraShake == null)
-        {
-            cameraShake = FindObjectOfType<CameraShake>();
-            if (cameraShake == null)
-                Debug.LogWarning("CameraShake bulunamadı! Sahnede CameraShake component'li bir obje olmalı.");
-        }
+        defaultSprite = _spriteRenderer.sprite; // Başlangıç sprite'ını kaydet
+
+        if (!allChests.Contains(this))
+            allChests.Add(this);
+
+        // ...
     }
+    public void ResetChest()
+    {
+        IsOpened = false;
+        _spriteRenderer.sprite = defaultSprite;
+    }
+
 
     public void OnTriggerStay2D(Collider2D collider)
     {
@@ -55,4 +76,7 @@ public class Chest : MonoBehaviour
 
         IsOpened = true; // Tekrar açılmasın
     }
+
+
+
 }

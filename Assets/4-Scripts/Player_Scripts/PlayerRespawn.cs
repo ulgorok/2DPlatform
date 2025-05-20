@@ -25,18 +25,29 @@ public class PlayerRespawn : MonoBehaviour
         }
 
     }
-
     public void Respawn()
     {
         Debug.Log("Player Respawn called");
-        ResetAllEnemies();      // <-- EKLENDİ
 
-        // İlk respawn sonrası tutorial ikonları kapat
+        ResetAllEnemies();
+        ResetAllChests();     // <-- Sandıkları sıfırla
+
         if (PlayerPrefs.GetInt("TutorialShown", 0) == 0)
         {
             tutorialIconManager.HideIcons();
         }
     }
+    //public void Respawn()
+    //{
+    //    Debug.Log("Player Respawn called");
+    //    ResetAllEnemies();      // <-- EKLENDİ
+
+    //    // İlk respawn sonrası tutorial ikonları kapat
+    //    if (PlayerPrefs.GetInt("TutorialShown", 0) == 0)
+    //    {
+    //        tutorialIconManager.HideIcons();
+    //    }
+    //}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -47,6 +58,13 @@ public class PlayerRespawn : MonoBehaviour
         }
     }
 
+    void ResetAllChests()
+    {
+        foreach (var chest in Chest.allChests)
+        {
+            chest.ResetChest();
+        }
+    }
 
 
 }
