@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     public bool isGrounded = false; // Karakter başlangıçta yerde
 
-    private bool canDash = true;
+    public static bool canDash = true;
     private float dashingPower = 1f;
     private float dashingTime = 0.75f;
     private float dashingCooldown = 1f;

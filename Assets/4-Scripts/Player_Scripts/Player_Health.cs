@@ -28,11 +28,13 @@ public class Player_Health : MonoBehaviour
     [SerializeField] private AudioClip deathSound;
     [SerializeField] private AudioClip hurtSound;
 
+    public GameObject _tuto;
     private PlayerRespawn playerRespawn;
 
 
     private void Awake()
     {
+        _tuto = GameObject.Find("TutorialManager");
         currentShieldHealth = 0;
         currentHealth = startingHealth;
         anim = GetComponent<Animator>();
@@ -42,6 +44,10 @@ public class Player_Health : MonoBehaviour
 
     private void Update()
     {
+        if (TutoGone.gone == true)
+        {
+            _tuto.SetActive(false);
+        }
         if (DeathTimer > 0)
         {
             DeathTimer -= Time.deltaTime;
@@ -53,6 +59,15 @@ public class Player_Health : MonoBehaviour
                 anim.Play("Player_Respawn");
                 DeathTimer = 0;
 
+            }
+        }
+        if(iFramesDuration > 0)
+        {
+            iFramesDuration -= Time.deltaTime;
+            if(iFramesDuration <= 0)
+            {
+                gameObject.layer = LayerMask.NameToLayer("Player");
+                iFramesDuration = 0;
             }
         }
     }
@@ -83,7 +98,8 @@ public class Player_Health : MonoBehaviour
         if (invulnerable && dead) return;
 
         currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
-
+        this.gameObject.layer = LayerMask.NameToLayer("Invincible");
+        iFramesDuration = 0.4f;
         if (currentHealth <= 0 && !dead)
         {
             cameraShake.ShakerCamera(); // Kamera sarsıntısı burda tetikleniyor
@@ -132,6 +148,7 @@ public class Player_Health : MonoBehaviour
     //Respawn
     public void Respawn()
     {
+        TutoGone.gone = true;
         AddHealth(startingHealth);
         anim.ResetTrigger("Player_Death");
         StartCoroutine(Invunerability());

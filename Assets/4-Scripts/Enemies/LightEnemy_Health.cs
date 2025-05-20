@@ -28,7 +28,7 @@ public class LightEnemy_Health : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
         _sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
-        anim.SetBool("Walk", true);
+        anim.SetBool("Light_Walk", true);
     }
 
     public void OnTriggerEnter2D(Collider2D other)

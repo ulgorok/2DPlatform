@@ -5,7 +5,7 @@ public class LightEnemy_Attack : MonoBehaviour
     [Header("Attack Parameters")]
     [SerializeField] private float attackCooldown = 1f; // istersen cooldown ekleyebilirsin
     [SerializeField] private float range = 1f;
-    [SerializeField] private int damage = 10;
+    [SerializeField] private int damage;
 
     [Header("Collider Parameters")]
     [SerializeField] private float colliderDistance = 0.5f;

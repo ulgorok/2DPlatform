@@ -6,6 +6,7 @@ public class PlayerRespawn : MonoBehaviour
     private Player_Health playerHealth;
 
     public static List<EnemyRespawnHandler> deadEnemies;
+    public TutorialIconManager tutorialIconManager; // Inspector'da atayacaksın
 
     private void Awake()
     {
@@ -29,6 +30,12 @@ public class PlayerRespawn : MonoBehaviour
     {
         Debug.Log("Player Respawn called");
         ResetAllEnemies();      // <-- EKLENDİ
+
+        // İlk respawn sonrası tutorial ikonları kapat
+        if (PlayerPrefs.GetInt("TutorialShown", 0) == 0)
+        {
+            tutorialIconManager.HideIcons();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -39,4 +46,7 @@ public class PlayerRespawn : MonoBehaviour
             collision.GetComponent<Animator>().SetTrigger("activate");
         }
     }
+
+
+
 }

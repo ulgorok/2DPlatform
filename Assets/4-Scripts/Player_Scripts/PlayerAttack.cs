@@ -17,14 +17,18 @@ public class PlayerAttack : MonoBehaviour
     private float cooldownStompTimer = 0f;
     public static bool canFire;
     public static int _bulletsLeft;
-    public int weaponChosen;
+    public static int weaponChosen;
     public bool canMelee;
-    public bool canStomp;
+    public static bool canStomp;
     public float canMeleeTimer;
     //public Transform _canvas;
     //public Transform _slider;
     public CameraShake cameraShake;
 
+    //public Sprite _pistol;
+    //public Sprite _shotGun;
+    //public Sprite _sword;
+    //public Sprite _katana;
     private void Awake()
     {
         canMelee = true;
