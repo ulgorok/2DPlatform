@@ -43,7 +43,7 @@ public class TextAnim : MonoBehaviour
             if(visibleCount >= totalVisibleCharacters)
             {
                 i += 1;
-                //Invoke("EndCheck", timeBtwnChars);
+                Invoke("EndCheck", timeBtwnChars);
                 break;
             }
 
