@@ -72,13 +72,13 @@ public class Player_Health : MonoBehaviour
         }
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("EnemyAttack") && currentShieldHealth > 0)
-        {
-            TakeShieldDamage(1);
-        }
-    }
+    //public void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("EnemyAttack") && currentShieldHealth > 0)
+    //    {
+    //        TakeShieldDamage(1);
+    //    }
+    //}
     public void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("ShieldHealth"))
@@ -88,32 +88,49 @@ public class Player_Health : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
-    public void TakeShieldDamage(float _damage)
-    {
-        if (invulnerable) return;
-        currentShieldHealth = Mathf.Clamp(currentShieldHealth - _damage, 0, 3);
-    }
+    //public void TakeShieldDamage(float _damage)
+    //{
+    //    if (invulnerable) return;
+    //    currentShieldHealth = Mathf.Clamp(currentShieldHealth - _damage, 0, 3);
+    //}
     public void TakeDamage(float _damage)
     {
-        if (invulnerable && dead) return;
+        if (invulnerable || dead) return;
 
-        currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
         this.gameObject.layer = LayerMask.NameToLayer("Invincible");
         iFramesDuration = 0.4f;
-        if (currentHealth <= 0 && !dead)
+
+        float remainingDamage = _damage;
+
+        if (currentShieldHealth > 0)
         {
-            cameraShake.ShakerCamera(); // Kamera sarsıntısı burda tetikleniyor
-            DeathTimer = 1.15f;
+            float shieldDamage = Mathf.Min(currentShieldHealth, remainingDamage);
+            currentShieldHealth -= shieldDamage;
+            remainingDamage -= shieldDamage;
 
-            Respawn();
-            // Deactivate all attached component classes
-            foreach (Behaviour component in components)
-                component.enabled = false;
+            // Shield hasarı varsa sadece kamera sarsıntısı göster
+            cameraShake.ShakerCamera();
+        }
 
-            anim.SetBool("grounded", true);
-            anim.SetTrigger("Player_Death");
+        if (remainingDamage > 0)
+        {
+            currentHealth = Mathf.Clamp(currentHealth - remainingDamage, 0, startingHealth);
 
-            dead = true;
+            if (currentHealth <= 0 && !dead)
+            {
+                cameraShake.ShakerCamera(); // Kamera sarsıntısı burada da tetiklenebilir
+                DeathTimer = 1.15f;
+
+                Respawn();
+
+                foreach (Behaviour component in components)
+                    component.enabled = false;
+
+                anim.SetBool("grounded", true);
+                anim.SetTrigger("Player_Death");
+
+                dead = true;
+            }
         }
     }
     public void AddHealth(float _value)
