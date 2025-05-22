@@ -9,9 +9,10 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource SFXSource;
 
     [Header("Audio Clip")]
-    [SerializeField] AudioClip stomp;
-    [SerializeField] AudioClip pistol;
-    [SerializeField] AudioClip death;
+    [SerializeField] public AudioClip stomp;
+    [SerializeField] public AudioClip pistol;
+    [SerializeField] public AudioClip death;
+    [SerializeField] public AudioClip dash;
 
     private void Start()
     {

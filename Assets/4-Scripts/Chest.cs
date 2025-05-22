@@ -13,6 +13,7 @@ public class Chest : MonoBehaviour
     public CameraShake cameraShake;
     public static List<Chest> allChests = new();
 
+    AudioManager audioManager;
 
     //public void Start()
     //{
@@ -54,6 +55,7 @@ public class Chest : MonoBehaviour
             {
                 _spriteRenderer.sprite = openedSprite;
                 OpenChest();
+                //audioManager.PlaySFX (audioManager.chest);
             }
         }
     }

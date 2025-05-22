@@ -19,7 +19,7 @@ public class LightEnemy_Health : MonoBehaviour
 
     private Animator anim;
     public GameObject bloodEffect;
-    private bool hasDroppedItem = false;
+    //private bool hasDroppedItem = false;
 
     void Awake()
     {

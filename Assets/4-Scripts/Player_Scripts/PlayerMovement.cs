@@ -26,15 +26,20 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheckTransform;
     private Player_Health playerHealth;
 
+    AudioManager audioManager; //
+    private float iFramesDuration;
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         playerHealth = GetComponent<Player_Health>();
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>(); //
     }
 
     private IEnumerator Dash()
     {
+        audioManager.PlaySFX(audioManager.dash); //
         canDash = false;
         _animator.SetBool("Dash", true);
         float originalGravity = _rigidbody.gravityScale;
@@ -45,6 +50,9 @@ public class PlayerMovement : MonoBehaviour
         _animator.SetBool("Dash", false);
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
+
+        this.gameObject.layer = LayerMask.NameToLayer("Invincible");
+        iFramesDuration = 0.4f;
 
     }
 

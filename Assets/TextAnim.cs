@@ -15,7 +15,7 @@ public class TextAnim : MonoBehaviour
     [SerializeField] float timeBtwnWords;
 
     int i = 0;
-    void Start()
+    void OnEnable()
     {
         EndCheck();
     }

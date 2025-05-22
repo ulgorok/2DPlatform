@@ -24,6 +24,7 @@ public class PlayerAttack : MonoBehaviour
     //public Transform _canvas;
     //public Transform _slider;
     public CameraShake cameraShake;
+    AudioManager audioManager;  //
 
     //public Sprite _pistol;
     //public Sprite _shotGun;
@@ -41,6 +42,7 @@ public class PlayerAttack : MonoBehaviour
         anim = GetComponent<Animator>();
         playerMovement = GetComponent<PlayerMovement>();
         firePoint.position = this.gameObject.transform.Find("FirePoint").position;
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>(); //
     }
 
     public void Update()
@@ -165,6 +167,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (canStomp && playerMovement.isGrounded)
         {
+            audioManager.PlaySFX(audioManager.stomp); //
             anim.SetTrigger("Player_Stomp");
             cooldownStompTimer = 8f;
             canStomp = false;

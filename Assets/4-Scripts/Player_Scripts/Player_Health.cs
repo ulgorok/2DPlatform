@@ -15,9 +15,10 @@ public class Player_Health : MonoBehaviour
     private float DeathTimer;
     public GameObject ShieldHealthShow;
 
-    [Header("iFrames")]
-    [SerializeField] private float iFramesDuration;
-    [SerializeField] private int numberOfFlashes;
+    //[Header("iFrames")]
+    //[SerializeField] private float iFramesDuration;
+    //[SerializeField] private int numberOfFlashes;
+    public float invulnerabilityDuration = 0.4f;
     private SpriteRenderer spriteRend;
 
     [Header("Components")]
@@ -30,7 +31,9 @@ public class Player_Health : MonoBehaviour
 
     public GameObject _tuto;
     private PlayerRespawn playerRespawn;
-
+    public int health; //
+    private int damage; //
+    private float colorTime; //
 
     private void Awake()
     {
@@ -61,15 +64,15 @@ public class Player_Health : MonoBehaviour
 
             }
         }
-        if(iFramesDuration > 0)
-        {
-            iFramesDuration -= Time.deltaTime;
-            if(iFramesDuration <= 0)
-            {
-                gameObject.layer = LayerMask.NameToLayer("Player");
-                iFramesDuration = 0;
-            }
-        }
+        //if(iFramesDuration > 0)
+        //{
+        //    iFramesDuration -= Time.deltaTime;
+        //    if(iFramesDuration <= 0)
+        //    {
+        //        gameObject.layer = LayerMask.NameToLayer("Player");
+        //        iFramesDuration = 0;
+        //    }
+        //}
     }
 
     //public void OnTriggerEnter2D(Collider2D collision)
@@ -97,8 +100,10 @@ public class Player_Health : MonoBehaviour
     {
         if (invulnerable || dead) return;
 
-        this.gameObject.layer = LayerMask.NameToLayer("Invincible");
-        iFramesDuration = 0.4f;
+        anim.SetTrigger("Player_Hurt");
+        health -= damage;
+        colorTime = 0.35f; //
+        StartCoroutine(Invunerability());
 
         float remainingDamage = _damage;
 
@@ -143,15 +148,20 @@ public class Player_Health : MonoBehaviour
     }
     private IEnumerator Invunerability()
     {
+        Debug.Log("START INVULNERABILITY");
         invulnerable = true;
         Physics2D.IgnoreLayerCollision(10, 11, true);
-        for (int i = 0; i < numberOfFlashes; i++)
-        {
-            spriteRend.color = new Color(1, 0, 0, 0.5f);
-            yield return new WaitForSeconds(iFramesDuration / (numberOfFlashes * 2));
-            spriteRend.color = Color.white;
-            yield return new WaitForSeconds(iFramesDuration / (numberOfFlashes * 2));
-        }
+        this.gameObject.layer = LayerMask.NameToLayer("Invincible");
+
+        yield return new WaitForSeconds(invulnerabilityDuration);
+        //for (int i = 0; i < numberOfFlashes; i++)
+        //{
+        //    spriteRend.color = new Color(1, 0, 0, 0.5f);
+        //    yield return new WaitForSeconds(iFramesDuration / (numberOfFlashes * 2));
+        //    spriteRend.color = Color.white;
+        //    yield return new WaitForSeconds(iFramesDuration / (numberOfFlashes * 2));
+        //}
+        this.gameObject.layer = LayerMask.NameToLayer("Player");
         Physics2D.IgnoreLayerCollision(10, 11, false);
         invulnerable = false;
     }
