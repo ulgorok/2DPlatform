@@ -39,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator Dash()
     {
+        this.gameObject.layer = LayerMask.NameToLayer("Invincible");
         audioManager.PlaySFX(audioManager.dash); //
         canDash = false;
         _animator.SetBool("Dash", true);
@@ -48,11 +49,14 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(dashingTime);
         _rigidbody.gravityScale = originalGravity;
         _animator.SetBool("Dash", false);
+        yield return new WaitForSeconds(0.4f); // dash iframe
+        this.gameObject.layer = LayerMask.NameToLayer("Player");
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
 
-        this.gameObject.layer = LayerMask.NameToLayer("Invincible");
-        iFramesDuration = 0.4f;
+        //iFramesDuration = 0.4f;
+
+
 
     }
 

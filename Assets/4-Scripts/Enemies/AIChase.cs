@@ -44,5 +44,12 @@ public class AIChase : MonoBehaviour
                 transform.localScale = new Vector3(-1f, 1f, 1f);
             }
         }
+        else
+        {
+            if (anim.GetBool("Light_Walk"))
+            {
+                anim.SetBool("Light_Walk", false);
+            }
+        }
     }
 }

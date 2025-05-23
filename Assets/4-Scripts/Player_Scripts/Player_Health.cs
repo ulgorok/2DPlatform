@@ -107,7 +107,7 @@ public class Player_Health : MonoBehaviour
     {
         if (invulnerable || dead) return;
 
-        anim.SetTrigger("Player_Hurt");
+        anim.Play("Player_Hurt");
         health -= damage;
         colorTime = 0.35f; //
         StartCoroutine(Invunerability());
@@ -139,7 +139,7 @@ public class Player_Health : MonoBehaviour
                     component.enabled = false;
 
                 anim.SetBool("grounded", true);
-                anim.SetTrigger("Player_Death");
+                anim.Play("Player_Death", 0, 0.0f);
 
                 audioManager.PlaySFX(audioManager.death); //
 
