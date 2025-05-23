@@ -1372,7 +1372,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 559da64a293cdff4c84c3149fe7663c9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f2b30ed6cf5d6954ca9b14ba792c5c91, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1392,8 +1392,8 @@ Transform:
   m_GameObject: {fileID: 1630772817}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.59, y: 0, z: 2.38}
-  m_LocalScale: {x: 2.3375, y: 2.325, z: 1}
+  m_LocalPosition: {x: -2.14, y: 0.71, z: 2.38}
+  m_LocalScale: {x: 1.1636665, y: 1.0632182, z: 0.376377}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1453,8 +1453,8 @@ MonoBehaviour:
   stringArray:
   - Mission...changed
   - They...watch..you
-  timeBtwnChars: 0.2
-  timeBtwnWords: 1
+  timeBtwnChars: 0.1
+  timeBtwnWords: 0.5
 --- !u!114 &1664384502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1712,6 +1712,11 @@ MonoBehaviour:
   heavydeath: {fileID: 0}
   lightdeath: {fileID: 0}
   shotgun: {fileID: 0}
+  reload: {fileID: 0}
+  shield: {fileID: 0}
+  respawn: {fileID: 0}
+  weaponswitch: {fileID: 0}
+  button: {fileID: 0}
 --- !u!4 &1758062054
 Transform:
   m_ObjectHideFlags: 0

@@ -3611,7 +3611,7 @@ Transform:
   m_GameObject: {fileID: 592875995}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.734076, y: -1.3351498, z: -0.75729024}
+  m_LocalPosition: {x: 5.43, y: -0.54, z: -0.75729024}
   m_LocalScale: {x: 2.8031, y: 2.8031, z: 2.8031}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6518,7 +6518,7 @@ Transform:
   m_GameObject: {fileID: 1130769049}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.05, y: -1.4531498, z: -0.75729024}
+  m_LocalPosition: {x: 2.05, y: -0.53, z: -0.75729024}
   m_LocalScale: {x: 2.272945, y: 2.272945, z: 2.272945}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8765,7 +8765,7 @@ Transform:
   m_GameObject: {fileID: 1555870968}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4, y: -0.2771492, z: -0.75729024}
+  m_LocalPosition: {x: -0.33, y: -0.2771492, z: -0.75729024}
   m_LocalScale: {x: 1.4154, y: 1.4154, z: 1.4154}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8841,7 +8841,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 35a90c5b175f7b04e83c3c0130b2ec43, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2a7e6b31194cb4b46917ce70e9b9e5a3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10373,7 +10373,7 @@ Transform:
   m_GameObject: {fileID: 1900856027}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.5359247, y: -0.8051491, z: -0.75729024}
+  m_LocalPosition: {x: -2.93, y: -0.8051491, z: -0.75729024}
   m_LocalScale: {x: 2.5114, y: 2.5114, z: 2.5114}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10579,7 +10579,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7b348d7f27aa50c41a7d1f91b478a05a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 933eb11c4e4615343b153ac25e250120, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10655,7 +10655,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3ea21b4913ed66f40a0e759b3a45b626, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f26cf0fc05e99954bad522f8990a3ecc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -12311,11 +12311,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8177613743125751312, guid: 153f8e9af6cab774bafac99c7e03d2ce, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -26.47
+      value: -34
       objectReference: {fileID: 0}
     - target: {fileID: 8177613743125751312, guid: 153f8e9af6cab774bafac99c7e03d2ce, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.741
+      value: 24.346
       objectReference: {fileID: 0}
     - target: {fileID: 8177613743125751312, guid: 153f8e9af6cab774bafac99c7e03d2ce, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12365,11 +12365,11 @@ PrefabInstance:
     - target: {fileID: 1480930292027469781, guid: 5ceb7c1ef0e6c264386eddee9cd09d35, type: 3}
       propertyPath: _sword
       value: 
-      objectReference: {fileID: 21300000, guid: 28c6019834ab92a40936379788b6b00d, type: 3}
+      objectReference: {fileID: 21300000, guid: 063511c15c985924d8ae726eced4c939, type: 3}
     - target: {fileID: 1480930292027469781, guid: 5ceb7c1ef0e6c264386eddee9cd09d35, type: 3}
       propertyPath: _katana
       value: 
-      objectReference: {fileID: 21300000, guid: 61111d11460bcc0409b0f389c5cfdbb7, type: 3}
+      objectReference: {fileID: 21300000, guid: 593618a8242566242a9e432dd86ec1de, type: 3}
     - target: {fileID: 1480930292027469781, guid: 5ceb7c1ef0e6c264386eddee9cd09d35, type: 3}
       propertyPath: _pistol
       value: 
@@ -12377,7 +12377,7 @@ PrefabInstance:
     - target: {fileID: 1480930292027469781, guid: 5ceb7c1ef0e6c264386eddee9cd09d35, type: 3}
       propertyPath: _shotGun
       value: 
-      objectReference: {fileID: 21300000, guid: 5af4a8fdb673b33459896c9a02a7a613, type: 3}
+      objectReference: {fileID: 21300000, guid: 11b3eb22accd7df4a975675ee02cce0d, type: 3}
     - target: {fileID: 2918769048251707176, guid: 5ceb7c1ef0e6c264386eddee9cd09d35, type: 3}
       propertyPath: cameraShake
       value: 
