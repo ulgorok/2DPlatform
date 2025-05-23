@@ -35,6 +35,8 @@ public class Player_Health : MonoBehaviour
     private int damage; //
     private float colorTime; //
 
+    AudioManager audioManager; //
+
     private void Awake()
     {
         _tuto = GameObject.Find("TutorialManager");
@@ -43,6 +45,8 @@ public class Player_Health : MonoBehaviour
         anim = GetComponent<Animator>();
         spriteRend = GetComponent<SpriteRenderer>();
         playerRespawn = GetComponent<PlayerRespawn>();
+
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>(); //
     }
 
     private void Update()
@@ -54,6 +58,7 @@ public class Player_Health : MonoBehaviour
         if (DeathTimer > 0)
         {
             DeathTimer -= Time.deltaTime;
+
             if (DeathTimer <= 0)
             {
                 transform.position = new Vector3(-7.51f, 25.246f, -0.57f);
@@ -89,6 +94,8 @@ public class Player_Health : MonoBehaviour
             currentShieldHealth++;
             ShieldHealthShow.SetActive(true);
             Destroy(other.gameObject);
+
+            audioManager.PlaySFX(audioManager.shield); //
         }
     }
     //public void TakeShieldDamage(float _damage)
@@ -134,7 +141,10 @@ public class Player_Health : MonoBehaviour
                 anim.SetBool("grounded", true);
                 anim.SetTrigger("Player_Death");
 
+                audioManager.PlaySFX(audioManager.death); //
+
                 dead = true;
+
             }
         }
     }

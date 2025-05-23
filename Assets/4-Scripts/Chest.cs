@@ -13,7 +13,7 @@ public class Chest : MonoBehaviour
     public CameraShake cameraShake;
     public static List<Chest> allChests = new();
 
-    AudioManager audioManager;
+    AudioManager audioManager; //
 
     //public void Start()
     //{
@@ -38,6 +38,7 @@ public class Chest : MonoBehaviour
         if (!allChests.Contains(this))
             allChests.Add(this);
 
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>(); //
         // ...
     }
     public void ResetChest()
@@ -49,13 +50,14 @@ public class Chest : MonoBehaviour
 
     public void OnTriggerStay2D(Collider2D collider)
     {
+
         if (collider.gameObject.CompareTag("Player") && !IsOpened)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
                 _spriteRenderer.sprite = openedSprite;
                 OpenChest();
-                //audioManager.PlaySFX (audioManager.chest);
+                audioManager.PlaySFX (audioManager.chest); //
             }
         }
     }

@@ -20,6 +20,7 @@ public class LightEnemy_Health : MonoBehaviour
     private Animator anim;
     public GameObject bloodEffect;
     //private bool hasDroppedItem = false;
+    AudioManager audioManager; //
 
     void Awake()
     {
@@ -29,6 +30,8 @@ public class LightEnemy_Health : MonoBehaviour
         _sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         anim.SetBool("Light_Walk", true);
+
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>(); //
     }
 
     public void OnTriggerEnter2D(Collider2D other)
@@ -87,6 +90,7 @@ public class LightEnemy_Health : MonoBehaviour
         if (health <= 0)
         {
             anim.Play("Light_Death");
+            audioManager.PlaySFX(audioManager.lightdeath); //
 
             // Sadece stomp ile öldürüldüyse item düşsün
             if (damagedByStomp)

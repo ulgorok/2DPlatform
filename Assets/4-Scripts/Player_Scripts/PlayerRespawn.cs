@@ -8,10 +8,14 @@ public class PlayerRespawn : MonoBehaviour
     public static List<EnemyRespawnHandler> deadEnemies;
     public TutorialIconManager tutorialIconManager; // Inspector'da atayacaksın
 
+    AudioManager audioManager; //
+
     private void Awake()
     {
         playerHealth = GetComponent<Player_Health>();
         deadEnemies = new();
+
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>(); //
     }
 
     void ResetAllEnemies()
@@ -28,6 +32,8 @@ public class PlayerRespawn : MonoBehaviour
     public void Respawn()
     {
         Debug.Log("Player Respawn called");
+
+        audioManager.PlaySFX(audioManager.respawn); //
 
         ResetAllEnemies();
         ResetAllChests();     // <-- Sandıkları sıfırla

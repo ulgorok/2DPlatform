@@ -92,6 +92,9 @@ public class PlayerAttack : MonoBehaviour
             {
                 weaponChosen = 0;
             }
+
+            audioManager.PlaySFX(audioManager.weaponswitch);
+
         }
         if (Input.GetKeyDown(KeyCode.Mouse0)) 
         {
@@ -111,6 +114,7 @@ public class PlayerAttack : MonoBehaviour
             {
                 Melee2Attack();
             }
+
         }
         if(Input.GetKeyDown(KeyCode.Space))
         {
@@ -124,8 +128,10 @@ public class PlayerAttack : MonoBehaviour
             _bulletsLeft -= 1;
             anim.SetTrigger("Player_Attack");
             Instantiate(bullet, new Vector3(firePoint.position.x, firePoint.position.y, firePoint.position.z), Quaternion.identity);
-            cooldownTimer = 0.7f;
+            cooldownTimer = 0.5f;
             canFire = false;
+
+            audioManager.PlaySFX(audioManager.pistol); //
         }
         //bullets[0].transform.position = firePoint.position;
         //bullets[0].GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));
@@ -140,6 +146,8 @@ public class PlayerAttack : MonoBehaviour
             Instantiate(bigBullet, new Vector3(firePoint.position.x, firePoint.position.y, firePoint.position.z), Quaternion.identity);
             cooldownTimer = 1f;
             canFire = false;
+
+            audioManager.PlaySFX(audioManager.shotgun); //
         }
         //bullets[0].transform.position = firePoint.position;
         //bullets[0].GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));
@@ -152,6 +160,9 @@ public class PlayerAttack : MonoBehaviour
             anim.SetTrigger("Player_Melee_Attack");
             canMeleeTimer = 0.83f;
             canMelee = false;
+
+            audioManager.PlaySFX(audioManager.dagger); //
+
         }
     }
     private void Melee2Attack()
@@ -161,6 +172,9 @@ public class PlayerAttack : MonoBehaviour
             anim.SetTrigger("Player_Melee_Attack_2");
             canMeleeTimer = 0.83f;
             canMelee = false;
+
+            audioManager.PlaySFX(audioManager.katana); //
+
         }
     }
     private void Stomp()

@@ -17,7 +17,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/5-Scenes/OutroCutscene.unity
     guid: a92cda999232e1c4ea54c1396035389b
-  - enabled: 1
-    path: Assets/5-Scenes/Outro2.unity
-    guid: 1ddeed8f57650d34a86b78f9e603e03d
   m_configObjects: {}

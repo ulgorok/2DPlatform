@@ -152,6 +152,7 @@ public class PlayerMovement : MonoBehaviour
         _asset.FindAction("Player/Jump").started += HandleJump;
         _asset.FindAction("Player/Jump").performed += HandleJump;
         //_asset.FindAction("Player/Jump").canceled += HandleJumpDown;
+
     }
     private void OnDisable()
     {
@@ -164,6 +165,7 @@ public class PlayerMovement : MonoBehaviour
         _asset.FindAction("Player/Jump").performed -= HandleJump;
         _asset.FindAction("Player/Jump").performed -= HandleJump;
         //_asset.FindAction("Player/Jump").canceled -= HandleJumpDown;
+
     }
     void HandleMove(InputAction.CallbackContext ctx)
     {
@@ -180,6 +182,7 @@ public class PlayerMovement : MonoBehaviour
         if (isGrounded && !playerHealth.dead)
         {
             _rigidbody.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+            audioManager.PlaySFX(audioManager.jump); //
         }
     }
 

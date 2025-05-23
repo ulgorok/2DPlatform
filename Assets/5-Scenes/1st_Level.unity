@@ -1914,10 +1914,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 634179027}
   SFXSource: {fileID: 1972427850}
-  stomp: {fileID: 8300000, guid: 5cd958917fe91264bb40552b6d9f4795, type: 3}
-  pistol: {fileID: 8300000, guid: 2e5a9653fe9edc149aeccbb8379f70c8, type: 3}
-  death: {fileID: 8300000, guid: d7c50fe1256835749b850e31a991a73b, type: 3}
-  dash: {fileID: 8300000, guid: 45d0f30213e9c9c4198dccbbccc5a5d3, type: 3}
+  stomp: {fileID: 8300000, guid: a4b950b5a671f1941bf41605688f7fba, type: 3}
+  pistol: {fileID: 8300000, guid: ad4bd04d750b81e43aebc731ed62ab16, type: 3}
+  death: {fileID: 8300000, guid: 193bcfb84e99f4f4db9f321913724e5c, type: 3}
+  dash: {fileID: 8300000, guid: 7f1cc674e60b6044abf5c82ea94f1f6b, type: 3}
+  chest: {fileID: 8300000, guid: df36ba3dcdac15d4d9db038f906b930b, type: 3}
+  dagger: {fileID: 8300000, guid: 5f8f614193a99a04b8f1522c40721590, type: 3}
+  jump: {fileID: 8300000, guid: 8b0661390f5a9ca4ea3d34ea4fec532f, type: 3}
+  katana: {fileID: 8300000, guid: fa21e43604049c74b99aaa7d901acfe2, type: 3}
+  heavydeath: {fileID: 8300000, guid: 2da08b9ad57030a4dba44acd3753f405, type: 3}
+  lightdeath: {fileID: 8300000, guid: 1a25f90517b1f974c9af8f890dfb9b21, type: 3}
+  shotgun: {fileID: 8300000, guid: 20e08eb57fa09f24a9c05608a7322383, type: 3}
+  reload: {fileID: 8300000, guid: a78ff94474098574a90f4b5afb671006, type: 3}
+  shield: {fileID: 8300000, guid: 9630dba5434b5ae43abebaaa90dc67dd, type: 3}
+  respawn: {fileID: 8300000, guid: aa7d98943449d0944a76bba3d9c9aaa1, type: 3}
+  weaponswitch: {fileID: 8300000, guid: 11de9bfe14d71d7439db1831cbfeca8e, type: 3}
+  button: {fileID: 0}
 --- !u!4 &287339689
 Transform:
   m_ObjectHideFlags: 0
@@ -4129,7 +4141,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: bc4c8ba3094cb9649ba8c2c09545d60c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -4827,7 +4839,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2954649782086618056, guid: ba986de8400943a47acb86f0ece9bee2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -30.33
+      value: -35.56
       objectReference: {fileID: 0}
     - target: {fileID: 2954649782086618056, guid: ba986de8400943a47acb86f0ece9bee2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5444,7 +5456,7 @@ Transform:
   m_GameObject: {fileID: 896578713}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.5058985, y: -3.2815323, z: -11.804306}
+  m_LocalPosition: {x: -3.8062174, y: -1.6613941, z: -11.804306}
   m_LocalScale: {x: 0.9981486, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6279,7 +6291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8177613743125751312, guid: 153f8e9af6cab774bafac99c7e03d2ce, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 24.38
+      value: 12.37
       objectReference: {fileID: 0}
     - target: {fileID: 8177613743125751312, guid: 153f8e9af6cab774bafac99c7e03d2ce, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11754,7 +11766,7 @@ Transform:
   m_GameObject: {fileID: 2104455219}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.5058985, y: -3.2815342, z: -11.804306}
+  m_LocalPosition: {x: -4.3881016, y: -1.6615334, z: -11.804306}
   m_LocalScale: {x: 3.88125, y: 1.26, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12384,11 +12396,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3972524066515321068, guid: 5ceb7c1ef0e6c264386eddee9cd09d35, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.17
+      value: -7.724
       objectReference: {fileID: 0}
     - target: {fileID: 3972524066515321068, guid: 5ceb7c1ef0e6c264386eddee9cd09d35, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 23.88
+      value: 25.5
       objectReference: {fileID: 0}
     - target: {fileID: 3972524066515321068, guid: 5ceb7c1ef0e6c264386eddee9cd09d35, type: 3}
       propertyPath: m_LocalPosition.z

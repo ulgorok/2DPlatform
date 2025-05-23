@@ -18,6 +18,9 @@ public class SliderReload : MonoBehaviour
     public Sprite _shotGun;
     public Sprite _sword;
     public Sprite _katana;
+
+    AudioManager audioManager; //
+
     void Start()
     {
         _canvas = GameObject.Find("ReloadCanvas");
@@ -27,6 +30,7 @@ public class SliderReload : MonoBehaviour
         _slider = _canvas.transform.Find("ReloadSlider");
         _actualSlider = _slider.GetComponent<Slider>();
         _slider.gameObject.SetActive(false);
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>(); //
     }
 
     // Update is called once per frame
@@ -39,14 +43,18 @@ public class SliderReload : MonoBehaviour
         if (PlayerAttack.weaponChosen == 1)
         {
             _sprite.sprite = _sword;
+
         }
         if (PlayerAttack.weaponChosen == 2)
         {
             _sprite.sprite = _shotGun;
+
         }
         if (PlayerAttack.weaponChosen == 3)
         {
             _sprite.sprite = _katana;
+
+
         }
         if (PlayerMovement.canDash)
         {
@@ -64,6 +72,7 @@ public class SliderReload : MonoBehaviour
         {
             _stompIcon.color = new Color(1, 1, 1, 0.2f);
         }
+
         if (reloadTime > 0)
         {
             _actualSlider.value = reloadTime;
@@ -83,6 +92,8 @@ public class SliderReload : MonoBehaviour
             _slider.gameObject.SetActive(true);
             reloadTime = 2f;
             PlayerAttack._bulletsLeft = -1;
+
+            audioManager.PlaySFX(audioManager.reload); //
         }
     }
 }
