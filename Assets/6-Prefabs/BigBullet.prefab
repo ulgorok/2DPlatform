@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4914602970967868870}
   m_Layer: 8
   m_Name: BigBullet
-  m_TagString: PlayerAttack
+  m_TagString: StrongPlayerAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
